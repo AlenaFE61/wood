@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .service-card {
+  perspective: 1000px;
+  /* Other styles */
+}
+
+.service-card-inner {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.service-card-front, 
+.service-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.service-card-back {
+  transform: rotateY(180deg);
+}
+
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-text-overlay-front,
+.card-text-overlay-back {
+  /* Shared styles for text overlay */
+}
+
+.service-card-image-front,
+.service-card-image-back {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Initial state for back of card to be invisible */
+.service-card-back {
+  opacity: 0;
+}
+
+/* Change to visible when hovering */
+.service-card:hover .service-card-back {
+  opacity: 1;
+}
+
+  </style>
+
+</html><!-- Service Card Example -->
+<div class="service-card">
+  <div class="service-card-inner">
+    <!-- Front of the card -->
+    <div class="service-card-front">
+      <img src="1.jpg" alt="Windows" class="service-card-image-front"/>
+      <div class="card-text-overlay-front">
+        <div class="card-text">MANUFACTURING AND INSTALLATION OF WINDOWS</div>
+      </div>
+    </div>
+    <!-- Back of the card -->
+    <div class="service-card-back">
+      <img src="2.jpg" alt="Doors" class="service-card-image-back"/>
+      <div class="card-text-overlay-back">
+        <div class="card-text">Manufacturing and installation of doors</div>
+        <a href="service-page.html" class="more-info">More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

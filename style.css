@@ -392,7 +392,30 @@ font-size: 16px;
   border-radius: 5px;
 }
 
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #000; /* Change the color as needed */
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  display: block; /* Make sure it's set to block to be visible */
+  width: 50px; /* Increase the width */
+  height: 50px; /* Increase the height */
+  font-size: 30px; /* Increase the size of the arrow icon */
+  text-align: center; /* Center the arrow icon */
+  line-height: 50px; /* Adjust line height to vertically center the arrow icon */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Adds a shadow for better visibility */
+}
 
+#backToTopBtn:hover {
+  background-color: #555; /* Optional: Change the hover state color */
+
+}
 
 
 
@@ -766,3 +789,4 @@ max-height: 100%;
   background-color: #555; /* Optional: Change the hover state color */
 }
 }
+

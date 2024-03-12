@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://www.mytiler.uk">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
@@ -45,20 +46,25 @@
 .text-container {
   position: absolute;
   top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   color: #ffffff;
   max-width: 80%;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 5px;
 }
 
 .caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
   font-size: 2em;
   font-weight: bold;
 }
 
 p {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
   font-size: 1.5em;
 }
 
@@ -67,12 +73,10 @@ p {
   font-size: 18px;
 }
 /* Add this inside a <style> tag in the head or in your external stylesheet */
-  .container2{
+  .container{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  display: flex;
-  align-items: stretch; /* This will make sure both children fill the height */
 }
 
 .about-us-content {
@@ -102,9 +106,10 @@ p {
 }
 /* Main container for the About Us section */
 #about-us {
-  
+  display: flex;
+  align-items: stretch; /* This will make sure both children fill the height */
   background-color: #eaeaea; /* Different background color */
-  padding: 10px;
+  padding: 10px 300px;
 }
 
 /* Container for the image */
@@ -151,6 +156,22 @@ p {
 .service-list li {
   margin-bottom: 10px; /* Space out the list items */
 }
+
+/* Paragraph styles */
+.description-text {
+  /* Additional paragraph styles if needed */
+}
+
+
+
+.caption-serv{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* Специфічні стилі для блоку "Our Services" */
 .section-title {
     margin: 20px;
     color: #333;
@@ -158,11 +179,11 @@ p {
 }
 .services-grid{
   display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 #our-services .unique-service-item:hover img {
-  /* transform: scale(1.1); */
+  transform: scale(1.1);
 }
 #our-services .unique-service-item:hover .text-container-serv {
   visibility: visible;
@@ -177,12 +198,12 @@ p {
 #our-services .unique-service-item .text-container-serv {
   position: absolute;
   bottom: 4%; /* Центрування від верху */
-  left: 50%; /* Центрування зліва */
-  transform: translate(-50%, -10%); /* Зміщення тексту на 50% вліво і вгору для точного центрування */
+  /* left: 50%; 
+  transform: translate(-50%, -10%);  */
   color: #fff;
-  /* transition: visibility 0s, opacity 0.3s linear; */
+  transition: visibility 0s, opacity 0.3s linear;
   text-align: center; /* Центрування тексту всередині контейнера */
-  padding: 10px;
+  /* padding: 10px; */
   width: 100%;
   /* white-space: nowrap; Запобігає переносу тексту на новий рядок */
 }
@@ -193,20 +214,16 @@ p {
 .text-container-serv .caption{
   font-size: 18px;
 }
-.caption-serv{
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 5px;
-}
 
+/* Стилі для елементів послуг */
 /* Стилі для елементів послуг */
 #our-services .unique-service-item {
   position: relative;
+  width: calc(25% - 40px); /* Вираховуємо ширину, вирахувавши маржини */
   float: left;
   overflow: hidden;
   margin: 10px; /* Відступи між елементами */
   height: 460px; /* Фіксована висота для усіх блоків */
-  width: 460px;
   box-sizing: border-box; /* Убезпечуємося, що відступи враховуються у внутрішній ширині */
 }
 
@@ -214,101 +231,9 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Заповнює блок, зберігаючи пропорції */
-  /* transition: transform 0.3s ease-in-out; */
+  transition: transform 0.3s ease-in-out;
 }
 
-
-
-#our-services .unique-service-item:hover img {
-  /* transform: scale(1.1); */
-}
-
-
-
-@media screen and (max-width: 1200px){
-  .text-container {
-  max-width: 90%;
-}
-  .caption {
-  font-size: 32px;
-  font-weight: bold;
-}
-p {
-  font-size: 24px;
-}
-#about-us {
-    flex-wrap: wrap-reverse;
-    margin: 0 auto;
-  
-}
-.image-container {
-    display: block;
-}
-.text-content-container {
-    display: block;
-    margin-left: 0px;
-    flex: none;
-    max-width: 100%;
-    text-align: justify;
-}
-#our-services .unique-service-item {
-    max-height: 400px;
-    max-width: 400px;
-}
-}
-@media screen and (max-width: 820px){
-  .text-container {
-  max-width: 98%;
-}
-.caption {
-  font-size: 26px;
-  font-weight: bold;
-}
-p {
-  font-size: 20px;
-}
-}
-
-@media screen and (max-width: 620px){
-  .text-container {
-  max-width: 60%;
-}
-.service-list {
-    column-count: 1;
-}
-}
-@media screen and (max-width: 540px){
-  .text-container {
-  max-width: 70%;
-}
-}
-
-@media screen and (max-width: 475px){
-  .text-content-container {
-    padding: 10px;
-}
-  .container2 {
-    padding: 0px;
-
-}
-  .text-container {
-  max-width: 90%;
-}
-
-#our-services .unique-service-item {
-    max-height: 360px;
-    max-width: 360px;
-}
-}
-@media screen and (max-width: 360px){
-  .text-container {
-  max-width: 100%;
-}
-#our-services .unique-service-item {
-    max-height: 320px;
-    max-width: 320px;
-}
-}
 </style>
 <header class="header">  
   <div class="container main-container">
@@ -395,14 +320,15 @@ p {
         </ul>
       </nav>
     </div>
-
+    <div class="container">
+    </div>
 
 </header>
 
 
 <body>
   
-  <div class="wrap container">
+  <div class="wrap">
     <main class="page">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -436,9 +362,8 @@ p {
 <!-- About Us Section -->
 <!-- About Us Section -->
 <section id="about-us"> <!-- Different background -->
-  <div  class="container2">
   <div class="image-container">
-    <img src="about2.jpg" alt="Our Craftsmanship">
+    <img src="bg4.jpg" alt="Our Craftsmanship">
   </div>
 
 
@@ -477,7 +402,6 @@ p {
 
     </div>
   </div>
-</div>
 </section>
 
 
@@ -485,144 +409,117 @@ p {
 <section id="our-services">
   <h2 class="section-title">OUR SERVICES</h2>
   <div class="services-grid">
-    <div class="unique-service-item swiper-container" id="windows">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-      <img src="1.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv" style="font-weight: 600;">MANUFACTURING AND INSTALLATION OF WINDOWS</p><br>
-        <p class="caption-serv">CASEMENT  WINDOWS</p>
-        <p class="caption-serv">FLUSH CASEMENT WINDOWS</p>
-        <p class="caption-serv">SASH WINDOWS</p>
-        <p class="caption-serv">TILT AND TURN WINDOWS</p>
-        <p class="caption-serv">BAY WINDOWS</p>
-        <p class="caption-serv">BOW WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/1.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">CASEMENT  WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/2.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">FLUSH CASEMENT WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/3.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">SASH WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/4.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">TILT AND TURN WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/5.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">BAY WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/6.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">BOW WINDOWS</p>
-      </div>
-    </div>
 
-
-
-
-
-    
+    <div class="unique-service-item" id="windows">
+      <img class="service-image" src="1.jpg" alt="Windows">
+      <img class="service-image" src="windows/1.jpg" alt="Casement Windows" style="display: none;">
+      <img class="service-image" src="windows/2.jpg" alt="Flush Casement Windows" style="display: none;">
+      <img class="service-image" src="windows/3.jpg" alt="Sash Windows" style="display: none;">
+      <img class="service-image" src="windows/4.jpg" alt="Tilt and Turn Windows" style="display: none;">
+      <img class="service-image" src="windows/5.jpg" alt="Bay Windows" style="display: none;">
+      <img class="service-image" src="windows/6.jpg" alt="Bow Windows" style="display: none;">
+      <div class="text-container-serv">
+        <p class="caption">Manufacturing and installation of doors</p>
+        <div class="text-container-serv" >
+          <p class="caption-serv window1" style="font-weight: 600;">MANUFACTURING AND INSTALLATION OF WINDOWS</p><br>
+          <p class="caption-serv window2" onclick="showImage('windows', 1)">CASEMENT  WINDOWS</p>
+          <p class="caption-serv window3" onclick="showImage('windows', 2)">FLUSH CASEMENT WINDOWS</p>
+          <p class="caption-serv window4" onclick="showImage('windows', 3)">SASH WINDOWS</p>
+          <p class="caption-serv window5" onclick="showImage('windows', 4)">TILT AND TURN WINDOWS</p>
+          <p class="caption-serv window6" onclick="showImage('windows', 5)">BAY WINDOWS</p>
+          <p class="caption-serv window7" onclick="showImage('windows', 6)">BOW WINDOWS</p>
+          <p class="caption-serv" onclick="showImage('windows', 0)">BACK TO MAIN IMAGE</p>
+        </div>
+      </div>
+    </div>
+    <div class="unique-service-item" id="windows">
+     <img class="service-image" src="1.jpg" alt="Windows">
+      <div class="text-container-serv">
+        <p class="caption">Manufacturing and installation of doors</p>
+      </div>
+    </div>
     <div class="unique-service-item" id="doors">
       <img src="2.webp" alt="Doors">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of doors</p>
+        <p class="caption">Manufacturing and installation of doors</p>
       </div>
     </div>
     <div class="unique-service-item" id="window-sills">
       <img src="images.jpg" alt="Window Sills">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of wooden window sills</p>
+        <p class="caption">Manufacturing and installation of wooden window sills</p>
       </div>
     </div>
     <div class="unique-service-item" id="furniture">
       <img src="44.jpg" alt="Furniture">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing, assembly, and restoration of furniture</p>
+        <p class="caption">Manufacturing, assembly, and restoration of furniture</p>
       </div>
     </div>
     <div class="unique-service-item" id="frame-construction">
       <img src="5.jpg" alt="Frame Construction">
       <div class="text-container-serv">
-        <p class="caption-serv">Frame construction</p>
+        <p class="caption">Frame construction</p>
       </div>
     </div>
     <div class="unique-service-item" id="panels-moldings-cornices">
       <img src="6.jpg" alt="Panels, Moldings, Cornices">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of panels, moldings, and cornices</p>
+        <p class="caption">Manufacturing and installation of panels, moldings, and cornices</p>
       </div>
     </div>
     <div class="unique-service-item" id="partitions">
       <img src="7.jpg" alt="Partitions">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of wooden partitions</p>
+        <p class="caption">Manufacturing and installation of wooden partitions</p>
       </div>
     </div>
     <div class="unique-service-item" id="fences-gates">
       <img src="8.jpg" alt="Fences and Gates">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of fences and gates</p>
+        <p class="caption">Manufacturing and installation of fences and gates</p>
       </div>
     </div>
     <div class="unique-service-item" id="roofing-structures">
       <img src="9.jpg" alt="Roofing Structures">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of wooden roofing structures</p>
+        <p class="caption">Manufacturing and installation of wooden roofing structures</p>
       </div>
     </div>
     <div class="unique-service-item" id="stairs">
       <img src="10.jpg" alt="Stairs">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing of stairs for construction</p>
+        <p class="caption">Manufacturing of stairs for construction</p>
       </div>
     </div>
     <div class="unique-service-item" id="parquet">
       <img src="11.jpg" alt="Parquet">
       <div class="text-container-serv">
-        <p class="caption-serv">Laying and restoration of parquet</p>
+        <p class="caption">Laying and restoration of parquet</p>
       </div>
     </div>
     <div class="unique-service-item" id="terraces">
       <img src="12.jpg" alt="Terraces">
       <div class="text-container-serv">
-        <p class="caption-serv">Laying and restoration of terraces</p>
+        <p class="caption">Laying and restoration of terraces</p>
       </div>
     </div>
     <div class="unique-service-item" id="wood-treatment">
       <img src="13.jpg" alt="Wood Treatment">
       <div class="text-container-serv">
-        <p class="caption-serv">Wood treatment services</p>
+        <p class="caption">Wood treatment services</p>
       </div>
     </div>
     <div class="unique-service-item" id="wood-painting">
       <img src="14.jpg" alt="Wood Painting">
       <div class="text-container-serv">
-        <p class="caption-serv">Wood painting services</p>
+        <p class="caption">Wood painting services</p>
       </div>
     </div>
     <div class="unique-service-item" id="wood-treatment">
       <img src="15.png" alt="Wood Treatment">
       <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing of garden furniture</p>
+        <p class="caption">Wood treatment services</p>
       </div>
     </div>
   </div>
@@ -641,15 +538,6 @@ p {
   </a>
   <div id="close-button" onclick="closeWhatsAppIcon()">X</div>
 </div>
-
-
-
-
-<script>
-
-
-
-</script>
 
 </body>
 <footer class="footer_bg">
@@ -870,44 +758,27 @@ function closeWhatsAppIcon() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const serviceItems = document.querySelectorAll('.swiper-container');
-
-  serviceItems.forEach((container) => {
-    let swiper = new Swiper(container, {
-      slidesPerView: 1,
-      loopedSlides: 3, // Припускаючи, що в кожному контейнері є три реальних слайди
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      init: false,
-    });
-
-    container.addEventListener('mouseenter', function () {
-      if (!swiper.initialized) {
-        swiper.init();
-      }
-      swiper.autoplay.start();
-    });
-
-    container.addEventListener('mouseleave', function () {
-      swiper.autoplay.stop();
-      swiper.slideTo(0, 0); // Встановлюємо перший слайд без анімації
-    });
-  });
-});
 
 
-
-
-
-
-
+// var swiper = new Swiper('.mySwiper', {
+//   effect: 'cube', // або 'flip' для іншого ефекту
+//   grabCursor: true,
+//   cubeEffect: {
+//     shadow: true,
+//     slideShadows: true,
+//     shadowOffset: 20,
+//     shadowScale: 0.94,
+//   },
+//   autoplay: {
+//     delay: 3000,
+//     disableOnInteraction: false,
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+//   loop: true,
+// });
 var swiper = new Swiper('.mySwiper', {
   effect: 'fade',
   fadeEffect: {
@@ -926,6 +797,17 @@ var swiper = new Swiper('.mySwiper', {
 
 
 
+
+
+
+
+function showImage(serviceId, imageIndex) {
+  const serviceElement = document.getElementById(serviceId);
+  const images = serviceElement.querySelectorAll('.service-image');
+  images.forEach((img, index) => {
+    img.style.display = index === imageIndex ? 'block' : 'none';
+  });
+}
 
 </script>
 

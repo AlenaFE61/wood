@@ -200,7 +200,7 @@ p {
 }
 
 /* Стилі для елементів послуг */
-#our-services .unique-service-item {
+#our-services .unique-service-item  {
   position: relative;
   float: left;
   overflow: hidden;
@@ -219,9 +219,118 @@ p {
 
 
 
-#our-services .unique-service-item:hover img {
-  /* transform: scale(1.1); */
+
+
+/* CSS for the service cards */
+.service-card {
+  width: 500px; /* Set a fixed width */
+  height: 500px; /* Height equals the width */
+  margin: 20px;
+  perspective: 1000px; /* Perspective for 3D effect */
 }
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg); /* Rotate to show the back on hover */
+}
+.service-card-front img,
+.service-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the card area with the image */
+  border-radius: 10px;
+}
+.card-text-overlay {
+  position: absolute;
+  bottom: 30px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.card-text {
+  font-size: 16px;
+  margin-bottom: 10px; /* Space for the 'More' link */
+}
+.more-info {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background: none; /* Transparent background for the link */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.more-info:hover {
+  text-decoration: underline; 
+}
+.service-card:hover .service-card-back,
+.service-card:hover .card-text-overlay,
+.service-card:hover .more-info {
+opacity: 1; 
+transition: opacity 0.6s; 
+}
+.card {
+  width: 300px;
+  height: 200px;
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card-front {
+  background: url('path_to/front.jpg') no-repeat center center;
+  background-size: cover;
+}
+.card-back {
+  background: url('path_to/back.jpg') no-repeat center center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+/* Стилі для внутрішнього блоку карточки, який буде перевертатись */
+.service-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+/* Стилі для передньої та задньої частин карточки */
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  backface-visibility: hidden; /* Приховує зворотню сторону під час перевертання */
+  width: 100%;
+  height: 100%;
+}
+/* Позиціонування задньої частини для її перевертання */
+.service-card-back {
+  transform: rotateY(180deg);
+}
+/* Задаємо перевертання при наведенні курсору миші */
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -326,22 +435,9 @@ p {
           <li class="item dropdown">
             <a class="item-menu" href="#serv">SERVICES</a>
             <ul class="dropdown-menu">
-                <li><a href="#windows">Manufacturing and installation of windows</a></li>
-                <li><a href="#doors">Manufacturing and installation of doors</a></li>
-                <li><a href="#window-sills">Manufacturing and installation of wooden window sills</a></li>
-                <li><a href="#furniture">Manufacturing, assembly, and restoration of furniture</a></li>
-                <li><a href="#frame-construction">Frame construction</a></li>
-                <li><a href="#panels-moldings-cornices">Manufacturing and installation of panels, moldings, and cornices</a></li>
-                <li><a href="#partitions">Manufacturing and installation of wooden partitions</a></li>
-                <li><a href="#fences-gates">Manufacturing and installation of fences and gates</a></li>
-                <li><a href="#roofing-structures">Manufacturing and installation of wooden roofing structures</a></li>
-                <li><a href="#stairs">Manufacturing of stairs for construction</a></li>
-                <li><a href="#parquet">Laying and restoration of parquet</a></li>
-                <li><a href="#terraces">Laying and restoration of terraces</a></li>
-                <li><a href="#wood-treatment">Wood treatment services</a></li>
-                <li><a href="#wood-painting">Wood painting services</a></li>
-                <li><a href="#garden-furniture">Manufacturing of garden furniture</a></li>
-              
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="doors.html">Doors</a></li>
+                <li><a href="#window-sills">Fences</a></li>
         </ul>
         <li class="item">
           <a class="item-menu" href="#proj">PROJECTS</a>
@@ -372,21 +468,9 @@ p {
             <a class="mob-list_link" href="#serv">SERVICES</a>
             <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
                       <ul class="dropdown-menu2">
-                          <li><a href="#windows">Manufacturing and installation of windows</a></li>
-                          <li><a href="#doors">Manufacturing and installation of doors</a></li>
-                          <li><a href="#window-sills">Manufacturing and installation of wooden window sills</a></li>
-                          <li><a href="#furniture">Manufacturing, assembly, and restoration of furniture</a></li>
-                          <li><a href="#frame-construction">Frame construction</a></li>
-                          <li><a href="#panels-moldings-cornices">Manufacturing and installation of panels, moldings, and cornices</a></li>
-                          <li><a href="#partitions">Manufacturing and installation of wooden partitions</a></li>
-                          <li><a href="#fences-gates">Manufacturing and installation of fences and gates</a></li>
-                          <li><a href="#roofing-structures">Manufacturing and installation of wooden roofing structures</a></li>
-                          <li><a href="#stairs">Manufacturing of stairs for construction</a></li>
-                          <li><a href="#parquet">Laying and restoration of parquet</a></li>
-                          <li><a href="#terraces">Laying and restoration of terraces</a></li>
-                          <li><a href="#wood-treatment">Wood treatment services</a></li>
-                          <li><a href="#wood-painting">Wood painting services</a></li>
-                          <li><a href="#garden-furniture">Manufacturing of garden furniture</a></li>
+                        <li><a href="windows.html">Windows</a></li>
+                        <li><a href="doors.html">Doors</a></li>
+                        <li><a href="#window-sills">Fences</a></li>
                       </ul>
           </li>  
           <li class="mob-list_item">
@@ -399,7 +483,7 @@ p {
 
 </header>
 
-
+<script src="path_to/flip.min.js"></script>
 <body>
   
   <div class="wrap container">
@@ -415,7 +499,7 @@ p {
           </div>
           
           <div class="swiper-slide">
-            <img src="bg15.png" alt="Slide 2" />
+            <img src="bg22.jpg" alt="Slide 2" />
             <div class="text-container">
               <div class="caption">EcoWood creations by Master Builders VS LTD</div>
               <p>Manufacturing of high-class doors and windows</p>
@@ -482,66 +566,110 @@ p {
 
 
       <!-- Our Services Section -->
+<!-- Our Services Section -->
 <section id="our-services">
   <h2 class="section-title">OUR SERVICES</h2>
   <div class="services-grid">
+
+  <!-- Service Card Example -->
+<div class="service-card">
+  <div class="service-card-inner card">
+    <div class="service-card-front">
+      <!-- Image for the front of the card -->
+      <img src="1.jpg" alt="Windows" />
+      <!-- Text for the front of the card -->
+      <div class="card-text-overlay">
+        <div class="card-text" style="font-weight: bold;">WINDOWS</div>
+      </div>
+    </div>
+    <div class="service-card-back">
+      <!-- Image for the back of the card -->
+      <img src="2.jpg" alt="Doors" />
+      <!-- Text and arrow for the back of the card -->
+      <div class="card-text-overlay">
+        <div class="card-text"> 
+          <ul ><li>Casement Windows</li>
+          <li>Flush Casement Windows</li>
+          <li>Sash Windows</li>
+          <li>Tilt and Turn Windows</li>
+          <li>Bay Windows</li>
+          <li>Bow Windows</li> </ul>
+          </div>
+        <a href="windows.html" class="more-info">More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Service Card Example -->
+  <div class="service-card">
+    <div class="service-card-inner card">
+      <div class="service-card-front">
+        <!-- Image for the front of the card -->
+        <img src="2.webp" alt="Doors" />
+        <!-- Text for the front of the card -->
+        <div class="card-text-overlay">
+          <div class="card-text" style="font-weight: bold;">DOORS</div>
+        </div>
+      </div>
+      <div class="service-card-back">
+        <!-- Image for the back of the card -->
+        <img src="222.jpg" alt="Doors" />
+        <!-- Text and arrow for the back of the card -->
+        <div class="card-text-overlay">
+          <div class="card-text"> 
+            <ul ><li>Casement Windows</li>
+            <li>Flush Casement Windows</li>
+            <li>Sash Windows</li>
+            <li>Tilt and Turn Windows</li>
+            <li>Bay Windows</li>
+            <li>Bow Windows</li> </ul>
+            </div>
+          <a href="doors.html" class="more-info">More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Repeat for each service -->
+    <!-- ... -->
+  </div>
+</section>
+
+      
+<!-- <div class="service-card">
+  <div class="service-card-inner">
+    <div class="service-card-front">
+      <img src="1.jpg" alt="Windows">
+    </div>
+    <div class="service-card-back">
+      <img src="1.jpg" alt="Windows">
+      <p>Текст на звороті карточки</p>
+      <a href="service-page.html" class="more-arrow">Більше →</a>
+    </div>
+  </div>
+</div>
+<div class="service-card">
+  <div class="service-card-inner">
+    <div class="service-card-front">
+      <img src="1.jpg" alt="Windows">
+    </div>
+    <div class="service-card-back">
+      <img src="1.jpg" alt="Windows">
+      <p>Текст на звороті карточки</p>
+      <a href="service-page.html" class="more-arrow">Більше →</a>
+    </div>
+  </div>
+</div>
+
     <div class="unique-service-item swiper-container" id="windows">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
       <img src="1.jpg" alt="Windows">
       <div class="text-container-serv">
-        <p class="caption-serv" style="font-weight: 600;">MANUFACTURING AND INSTALLATION OF WINDOWS</p><br>
-        <p class="caption-serv">CASEMENT  WINDOWS</p>
-        <p class="caption-serv">FLUSH CASEMENT WINDOWS</p>
-        <p class="caption-serv">SASH WINDOWS</p>
-        <p class="caption-serv">TILT AND TURN WINDOWS</p>
-        <p class="caption-serv">BAY WINDOWS</p>
-        <p class="caption-serv">BOW WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/1.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">CASEMENT  WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/2.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">FLUSH CASEMENT WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/3.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">SASH WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/4.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">TILT AND TURN WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/5.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">BAY WINDOWS</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <img src="windows/6.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">BOW WINDOWS</p>
+        <p class="caption-serv">MANUFACTURING AND INSTALLATION OF WINDOWS</p><br>
       </div>
     </div>
 
-
-
-
-
-    
-    <div class="unique-service-item" id="doors">
+    <div class="unique-service-item swiper-container" id="doors">
       <img src="2.webp" alt="Doors">
       <div class="text-container-serv">
         <p class="caption-serv">Manufacturing and installation of doors</p>
@@ -624,9 +752,9 @@ p {
       <div class="text-container-serv">
         <p class="caption-serv">Manufacturing of garden furniture</p>
       </div>
-    </div>
-  </div>
-</section>
+    </div> -->
+  <!-- </div>
+</section> -->
 
     
     </main>
@@ -870,43 +998,6 @@ function closeWhatsAppIcon() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const serviceItems = document.querySelectorAll('.swiper-container');
-
-  serviceItems.forEach((container) => {
-    let swiper = new Swiper(container, {
-      slidesPerView: 1,
-      loopedSlides: 3, // Припускаючи, що в кожному контейнері є три реальних слайди
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      init: false,
-    });
-
-    container.addEventListener('mouseenter', function () {
-      if (!swiper.initialized) {
-        swiper.init();
-      }
-      swiper.autoplay.start();
-    });
-
-    container.addEventListener('mouseleave', function () {
-      swiper.autoplay.stop();
-      swiper.slideTo(0, 0); // Встановлюємо перший слайд без анімації
-    });
-  });
-});
-
-
-
-
-
-
 
 var swiper = new Swiper('.mySwiper', {
   effect: 'fade',
@@ -923,7 +1014,6 @@ var swiper = new Swiper('.mySwiper', {
   },
   loop: true,
 });
-
 
 
 

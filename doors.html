@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+  <title>Wood Services</title>
+  <meta name="description" content="">
+</head>
+<style>
+  body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.window-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.window-gallery {
+  padding: 20px;
+}
+
+.window-gallery h2 {
+  text-align: center;
+}
+
+.gallery-images img {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+</style>
+<header class="header">  
+  <div class="container main-container">
+  <a class="logo" href="">
+<img class="logo_img" src="img/logo/7smol.png" alt="Master Builders VS LTD Logo" >
+</a>
+      <nav class="navigation-menu" id="main-nav">
+        <ul class="list mob-list">
+          <li class="item">
+            <a class="item-menu" href="#home">HOME</a>
+          </li>
+          <li class="item">
+            <a class="item-menu" href="#about">ABOUT US</a>
+          </li>
+          <li class="item dropdown">
+            <a class="item-menu" href="#serv">SERVICES</a>
+            <ul class="dropdown-menu">
+                <li><a href="#windows">Manufacturing and installation of windows</a></li>
+                <li><a href="#doors">Manufacturing and installation of doors</a></li>
+                <li><a href="#window-sills">Manufacturing and installation of wooden window sills</a></li>
+                <li><a href="#furniture">Manufacturing, assembly, and restoration of furniture</a></li>
+                <li><a href="#frame-construction">Frame construction</a></li>
+                <li><a href="#panels-moldings-cornices">Manufacturing and installation of panels, moldings, and cornices</a></li>
+                <li><a href="#partitions">Manufacturing and installation of wooden partitions</a></li>
+                <li><a href="#fences-gates">Manufacturing and installation of fences and gates</a></li>
+                <li><a href="#roofing-structures">Manufacturing and installation of wooden roofing structures</a></li>
+                <li><a href="#stairs">Manufacturing of stairs for construction</a></li>
+                <li><a href="#parquet">Laying and restoration of parquet</a></li>
+                <li><a href="#terraces">Laying and restoration of terraces</a></li>
+                <li><a href="#wood-treatment">Wood treatment services</a></li>
+                <li><a href="#wood-painting">Wood painting services</a></li>
+                <li><a href="#garden-furniture">Manufacturing of garden furniture</a></li>
+              
+        </ul>
+        <li class="item">
+          <a class="item-menu" href="#proj">PROJECTS</a>
+        </li>
+      </nav>
+
+    <div type="text" class="menu-open" data-menu-open>
+      <img class="z" src="img/menu.svg" alt="Mobile menu" width="35" height="35">
+    </div>
+
+  </div> 
+
+
+  <div class="mob-menu is-hidden mob-container" data-menu>
+    <div class="mob-wrapp ">
+      <div type="text" class="menu-close" data-menu-close>
+        <img src="img/clear.svg" alt="Button clear" width="35" height="35" >
+      </div>
+      <nav class="nav-menu">
+        <ul class="mob-list">
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="#home">НOME</a>
+          </li> 
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="#about">ABOUT US</a>
+          </li> 
+          <li class="mob-list_item dropdown2">
+            <a class="mob-list_link" href="#serv">SERVICES</a>
+            <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
+                      <ul class="dropdown-menu2">
+                          <li><a href="#windows">Manufacturing and installation of windows</a></li>
+                          <li><a href="#doors">Manufacturing and installation of doors</a></li>
+                          <li><a href="#window-sills">Manufacturing and installation of wooden window sills</a></li>
+                          <li><a href="#furniture">Manufacturing, assembly, and restoration of furniture</a></li>
+                          <li><a href="#frame-construction">Frame construction</a></li>
+                          <li><a href="#panels-moldings-cornices">Manufacturing and installation of panels, moldings, and cornices</a></li>
+                          <li><a href="#partitions">Manufacturing and installation of wooden partitions</a></li>
+                          <li><a href="#fences-gates">Manufacturing and installation of fences and gates</a></li>
+                          <li><a href="#roofing-structures">Manufacturing and installation of wooden roofing structures</a></li>
+                          <li><a href="#stairs">Manufacturing of stairs for construction</a></li>
+                          <li><a href="#parquet">Laying and restoration of parquet</a></li>
+                          <li><a href="#terraces">Laying and restoration of terraces</a></li>
+                          <li><a href="#wood-treatment">Wood treatment services</a></li>
+                          <li><a href="#wood-painting">Wood painting services</a></li>
+                          <li><a href="#garden-furniture">Manufacturing of garden furniture</a></li>
+                      </ul>
+          </li>  
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="#proj">PROJECTS</a>
+          </li> 
+        </ul>
+      </nav>
+    </div>
+
+
+</header>
+
+<script src="path_to/flip.min.js"></script>
+<body>
+  
+  <section class="window-details">
+    <article>
+      <h2>Design & Quality</h2>
+      <p>Our windows are designed with both aesthetics and insulation in mind. Every window is a piece of craftsmanship, ensuring the best quality and functionality.</p>
+    </article>
+    <article>
+      <h2>Custom Solutions</h2>
+      <p>We provide customized window solutions to fit every unique need of your project, matching the architecture and design of your space.</p>
+    </article>
+  </section>
+
+  <section class="window-gallery">
+    <h2>DOORS</h2>
+    <div class="gallery-images">
+      <!-- Add images here -->
+      <img src="bg11.jpg" alt="Window Sample 1">
+      <img src="9.jpg" alt="Window Sample 2">
+      <img src="3.jpg" alt="Window Sample 3">
+    </div>
+  </section>
+
+
+  <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+  <div id="whatsapp-icon" style="display:none;">
+    <a href="https://wa.me/447525459552?text=Online%20assistance%20here">
+      <span>start chat...</span>
+      <img src="whatsapp1.png" alt="WhatsApp Icon">
+    </a>
+    <div id="close-button" onclick="closeWhatsAppIcon()">X</div>
+  </div>
+  
+  
+  
+  
+  <script>
+  
+  
+  
+  </script>
+  
+  </body>
+  <footer class="footer_bg">
+    <div class="footer-block">
+        <div class="a">
+          <div class="wrap_logo" style="display: flex;flex-direction: column;">
+            <a class="footer_logo_link" href="#home">
+              <span class="footer_logo">
+                <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo" oncontextmenu="return false;">
+              </span>
+            </a>
+            <a class="footer_logo_link" href="https://www.fastwarm.com/" style="padding-top:20px;">
+              <span class="footer_logo" >
+                <img src="fastwarm-logo.png" alt="Fastwarm" oncontextmenu="return false;">
+              </span>
+            </a>
+          </div>
+  
+  
+  
+          
+          <div class="footer-menu">
+            <nav class="footer_navigation-menu">
+              <ul class="footer_list_menu">
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#home">HOME</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#about">ABOUT US</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#serv">SERVICES</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#proj">PROJECTS</a>
+                </li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="b ">
+          
+          <div class="footer-contacts">
+            <h3 class="title_contacts">Contacts</h3>
+            <address>
+            <ul class="footer_list_menu" >
+              <li class= "list-footer-item"><a class="foter-contacts-mail" href="mailto:project@mbvsltd.com">project@mbvsltd.com</a></li>
+              <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:075 2545 9552">075 2545 9552</a></li>
+              <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:020 3539 1924">020 3539 1924</a></li>
+            </ul>
+            </address>
+            <div class="sety_footer">
+        <a href="https://www.yell.com/biz/master-builders-vs-ltd-harrow-8851698/" target="_blank">
+      <img class="yell_footer" src="img/yell-icon.png" alt="Yell" style="width: 35px; height: 35px;background-color: #03031a;border-radius: 8px;" >
+        </a>
+        <a href="https://www.linkedin.com/in/vitalii-sopit-8ba5b5162/" target="_blank">
+      <img class="in_footer" src="img/in-icon.png" alt="LinkedIn" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61551452585348" target="_blank">
+      <img class="in_footer" src="img/facebook.png" alt="Facebook" style="width: 35px; height: 35px; background-color: #03031a;">
+        </a>
+        <a href="https://www.instagram.com/masterbuildersvsltd/?next=%2F" target="_blank">
+      <img class="in_footer" src="img/instagram.webp" alt="Instagram" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        <a href="https://wa.me/447525459552?text=Online%20assistance%20here" target="_blank">
+      <img class="in_footer" src="img/whatsapp1.webp" alt="WhatsApp" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        </div>
+          </div>
+        </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+  
+  
+    // Активне меню та скрол до выдповыдного блоку
+    // Ждем события DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+    var currentUrl = window.location.href;
+    var menuLinks = document.querySelectorAll('.item-menu');
+    
+    for (var i = 0; i < menuLinks.length; i++) {
+    // Получаем URL ссылки
+    var linkUrl = menuLinks[i].getAttribute('href');
+    
+    // Проверяем, соответствует ли текущий URL ссылке в меню
+    if (currentUrl === linkUrl) {
+      // Если да, то добавляем класс "active" к элементу меню
+      menuLinks[i].classList.add('active');
+    }
+    }
+    });
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      var toggles2 = document.querySelectorAll('.dropdown-toggle2');
+      
+      toggles2.forEach(function(toggle) {
+          toggle.addEventListener('click', function(event) {
+              event.stopPropagation(); // чтобы предотвратить всплытие события
+              var menu = this.nextElementSibling;
+              if (menu.style.display === 'block') {
+                  menu.style.display = 'none';
+              } else {
+                  menu.style.display = 'block';
+              }
+          });
+      });
+    
+      // Дополнительно: закрыть меню при нажатии вне его на мобильной версии
+      document.body.addEventListener('click', function(event) {
+          if (!event.target.closest('.dropdown2')) {
+              var menus = document.querySelectorAll('.mob-menu .dropdown-menu2');
+              menus.forEach(function(menu) {
+                  menu.style.display = 'none';
+              });
+          }
+      });
+    });
+    
+    (() => {
+    const refs = {
+      openMenuBtn: document.querySelector("[data-menu-open]"),
+      closeMenuBtn: document.querySelector("[data-menu-close]"),
+      menu: document.querySelector("[data-menu]"),
+      body: document.querySelector("body"),
+      menuList: document.querySelector(".mob-list"),
+    };
+  
+    refs.openMenuBtn.addEventListener("click", toggleMenu);
+    refs.closeMenuBtn.addEventListener("click", toggleMenu);
+    refs.menuList.addEventListener("click", removeMenu);
+  
+    function toggleMenu() {
+      refs.menu.classList.toggle("is-hidden");
+      refs.body.classList.toggle("no-scroll");
+    }
+    function removeMenu() {
+      refs.menu.classList.add("is-hidden");
+      refs.body.classList.remove("no-scroll");
+    }
+  })();
+    
+  
+  
+  // Кнопка скролу догори
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+      document.getElementById("backToTopBtn").style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  document.getElementById("backToTopBtn").addEventListener("click", function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+  
+        let targetId = this.getAttribute('href');
+        let target = document.querySelector(targetId);
+        if (target) {
+          let headerHeight = document.querySelector('.header').offsetHeight;
+          let targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+  
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  
+  
+  
+    // Мобільне меню
+    document.querySelectorAll('.mob-list_link, .dropdown-menu2 a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+  
+      // Закриття мобільного меню
+      const mobMenu = document.querySelector(".mob-menu");
+      mobMenu.classList.add("is-hidden");
+      document.body.classList.remove("no-scroll");
+  
+      // Перехід до відповідної секції
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+  
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  
+  
+  // ватсап
+  window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('whatsapp-icon').style.display = 'block';
+    }, 5000);  // 5000 milliseconds = 5 seconds
+  }
+  
+  function closeWhatsAppIcon() {
+    document.getElementById('whatsapp-icon').style.display = 'none';
+  }
+  
+  
+  
+  var swiper = new Swiper('.mySwiper', {
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    loop: true,
+  });
+  
+  
+  
+  </script>
+  
+  </html>
