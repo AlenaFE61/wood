@@ -12,56 +12,206 @@
   <meta name="description" content="">
 </head>
 <style>
-  body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+ body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .window-details {
+    gap: 20px;
+    padding: 20px;
+    background-color: #eaeaea;
+    padding: 10px;
+    margin-top: 50px;
+  }
+.details{
+  margin-top: 150px;
+}
+  .window-gallery {
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+
+  .window-gallery h2 {
+    text-align: center;
+  }
+
+  .gallery-images img {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .windows_title{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .title-underline {
+    height: 4px;
+    width: 124px;
+    background-color: #007aff;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.gallery-images{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  .wrapper_img {
+    position: relative;
+    width: 600px;
+    height: 600px;
+  }
+
+  .photo {
+    width: 600px;
+    height: 600px;
+  }
+
+  .card-text-overlay {
+    position: absolute;
+    bottom: 30px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    margin-bottom: 10px; /* Space for the 'More' link */
+  }
+    .info-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: center;    
+      margin-top: 40px;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+    .info-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .info-list {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .info-list li {
+      margin-bottom: 5px;
+    }
+
+    .mission-statement {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .container {
+    z-index: 10;
+    position: relative;
+  }
+
+  /* This will set the info-block to take 70% width and center it, with a lighter background */
+  .info-block {
+    width: 70%; /* Use 70% of the viewport width */
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background, adjust the color as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds a slight shadow for depth */
+    font-family: Arial, sans-serif;
+  }
+
+  /* Make sure that your header is not covering the sections below */
+  header {
+    z-index: 1000; /* Higher z-index means it will be on top */
+    position: relative; /* Position relative so z-index takes effect */
+  }
+
+
+  .wrapper_img {
+  position: relative;
+  width: 600px;
+  height: 560px; /* Adjust as needed */
+  /* other styling */
 }
 
-.window-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.window-gallery {
-  padding: 20px;
-}
-
-.window-gallery h2 {
-  text-align: center;
-}
-
-.gallery-images img {
+.window-title {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
   width: 100%;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  text-align: center;
+  color: white; /* Change as needed */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 5px 0; /* Padding for spacing */
+  margin: 0; /* Reset margin */
+  display: block; /* Ensure it's always a block */
+  transition: all 0.3s ease; /* Transition for the hover effect */
 }
 
-.contact-info {
-  background: #f4f4f4;
+.window-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent overlay */
+  color: white;
+  visibility: hidden;
+  opacity: 0;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  transition: visibility 0s, opacity 0.3s linear;
 }
 
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+.wrapper_img:hover .window-description {
+  visibility: visible;
+  opacity: 1;
 }
-
+.info-content{
+  text-align: justify;
+}
+  /* Style adjustments for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .info-block {
+      width: 90%; /* On smaller screens, the info-block should take more space */
+    }
+  }
 </style>
 <header class="header">  
   <div class="container main-container">
@@ -151,34 +301,101 @@ footer {
 
 
 </header>
-
-<script src="path_to/flip.min.js"></script>
 <body>
-  
-  <section class="window-details">
-    <article>
-      <h2>Design & Quality</h2>
-      <p>Our windows are designed with both aesthetics and insulation in mind. Every window is a piece of craftsmanship, ensuring the best quality and functionality.</p>
-    </article>
-    <article>
-      <h2>Custom Solutions</h2>
-      <p>We provide customized window solutions to fit every unique need of your project, matching the architecture and design of your space.</p>
-    </article>
-  </section>
 
-  <section class="window-gallery">
-    <h2>WINDOWS</h2>
-    <div class="gallery-images" style="text-align: center;">
-      <!-- Add images here -->
-      <img style="width: 700px;     height: 700px;" src="windows/1.jpg" alt="Window Sample 1">
-      <img style="width: 700px;     height: 700px;" src="windows/2.jpg" alt="Window Sample 2">
-      <img style="width: 700px;     height: 700px;" src="windows/3.jpg" alt="Window Sample 3">
-      <img style="width: 700px;     height: 700px;" src="windows/4.jpg" alt="Window Sample 1">
-      <img style="width: 700px;     height: 700px;" src="windows/5.jpg" alt="Window Sample 2">
-      <img style="width: 700px;     height: 700px;" src="windows/6.jpg" alt="Window Sample 3">
+  <section class="window-details details">
+    <div class="info-block">
+      <h1 class="windows_title" >WINDOWS</h1>
+      <div class="title-underline"></div>
+      <p class="info-content">
+        Our company is fully equipped with the latest precision woodworking equipment, enabling us to fulfill even the most personalized orders. With such extensive capabilities, Master Builders VS LTD is not just a service provider, but a creative partner that turns individual concepts into reality. Whether your needs are traditional or avant-garde, large-scale or uniquely compact, our facility is designed to meet them with excellence. It’s not just about having the right tools; it’s about the experience of using them in a way that brings your personalized design of windows and doors to life, ensuring that each product perfectly suits the character of your home and your personal vision.
+      </p>
     </div>
   </section>
+<section class="window-gallery">
 
+  <div class="gallery-images" style="text-align: center;">
+
+    <div class="wrapper_img">
+      <img class="photo" src="windows/1.jpg" alt="Window Sample 1">
+      <h2 class="window-title">FLUSH CASEMENT WINDOWS</h2>
+  <div class="window-description">
+    <p>Casement windows are considered a classic style, which is characterized by sliding panels that open outward. This design is famous for its simplicity and elegance and can be made in various sizes and shapes. They are particularly popular in Great Britain.
+      Wooden windows made in the sash style have their unique features. They are made of high-quality wood, which creates a natural and cozy atmosphere that gives the house character and charm. Wooden casement windows can be decorated with various details and stains to match any interior style.
+    </p>
+  </div>
+    </div>
+    <div class="wrapper_img">
+      <img class="photo" src="windows/2.jpg" alt="Window Sample 2">
+           <h2 class="window-title">FLUSH CASEMENT WINDOWS</h2>
+  <div class="window-description">
+    <p>Wooden casement windows are characterized by panels flush with the frame when closed, creating a seamless and smooth appearance.
+      One of the key features of such windows is their unique design. The uniform location of the sashes forms a surface that is perfectly aligned with the frame, which improves the overall aesthetic appearance of the window. Clean lines and modern design make them an ideal choice for a minimalist interior.
+      </p>
+    </div>
+  </div>
+    <div class="wrapper_img">
+      <img class="photo" src="windows/3.jpg" alt="Window Sample 3">
+       <h2 class="window-title">SASH WINDOWS</h2>
+  <div class="window-description">
+    <p>Casement windows are a symbol of classical style that has stood the test of time for centuries and is often found in traditional and old buildings. They are distinguished by vertically sliding panels, usually with several glass units. Adding casement windows can instantly elevate the aesthetic of any property, especially one with wood elements.
+      Wooden casement windows are usually made from high-quality wooden sections, which not only add traditional charm but also ensure strength and durability. They can be customized to suit specific design and style preferences, with various finishes, glazing, and fittings available.      
+      </p>
+    </div>
+  </div>
+
+    <div class="wrapper_img">
+      <img class="photo" src="windows/4.jpg" alt="Window Sample 3">
+      <h2 class="window-title">TILT AND TURN WINDOWS</h2>
+  <div class="window-description">
+    <p>
+      Tilt and turn windows are the epitome of modern style, offering versatility in both functionality and aesthetics. These windows can be tilted inward for ventilation or fully opened for easy cleaning and maintenance. This dual functionality makes them a popular choice for modern homes where comfort and efficiency are key.
+      Wooden tilt-and-turn windows are noted for improved aesthetics, as wood can add an attractive design. Ready-made wooden windows can be made using high-quality materials, which increases their durability and strength. Each section of a wooden window contributes to the overall durability and strength of the unit.      
+      </p>
+    </div>
+  </div>
+
+    <div class="wrapper_img">
+      <img class="photo" src="windows/5.jpg" alt="Window Sample 3">
+      <h2 class="window-title">BAY WINDOWS</h2>
+  <div class="window-description">
+    <p>
+      Bay windows, projecting from the main wall of the house, create a niche or bay window inside the room and are known for their panoramic views that enhance natural light and provide a unique design that enriches the interior and exterior of the house.
+Wooden bay windows offer an even more stylish and durable option. They are known for their strength, durability and natural appeal. Wooden bay windows can also be customized to suit any design and style.
+      </p>
+    </div>
+  </div>
+  <div class="wrapper_img">
+      <img class="photo" src="windows/6.jpg" alt="Window Sample 3">
+      <h2 class="window-title">BOW WINDOWS</h2>
+      <div class="window-description">
+        <p>
+          Wooden arched windows impress with their expressiveness and sophistication in architecture, adding elegance and character to any home. These bay window-like windows project forward from the main wall of the house, creating a curved or rounded shape. However, unlike bay windows, which often have three panes, arched windows usually consist of four or more panes that form a continuous curve, resembling the shape of a bow.
+          </p>
+        </div>
+      </div>
+    <!-- Add more images as needed -->
+  </div>
+</section>
+<section class="window-details">
+  <div class="info-block">
+    <div class="info-header">ADVANTAGES</div>
+    <p class="info-content">
+      Several significant advantages make wooden windows an attractive choice for your home. First, they provide unmatched aesthetics that can enhance the overall beauty and character of your home. The natural warmth and charm of wood add a special charm to both traditional and modern homes.
+    </p>
+    <p class="info-content">
+      With unique grain patterns and rich colors, wooden window frames can add elegance and sophistication to any room, creating a warm and inviting atmosphere.
+    <p class="info-content">
+      In addition to aesthetic appeal, wooden windows have exceptional thermal insulation properties. Wood is a natural insulator, which provides better thermal characteristics compared to other materials for window frames. They help maintain a comfortable indoor temperature, reducing energy costs and carbon footprint.
+    </p>
+    <p class="info-content">
+      Wooden window frames are also durable and strong. Wood is a strong and durable material that can stand the test of time. With proper care and treatment, they can remain resistant to rotting, burning, and insect infestation, providing long-lasting reliability. This can be a wise investment as wooden windows can last for decades.
+    </p>
+    <p class="info-content">
+      Finally, wooden windows offer a wide range of customization options, allowing you to adapt them to your specific design preferences. You can easily choose wood species, finishes, colors, and designs, creating windows that perfectly fit the style and aesthetics of your home. Whether you prefer a traditional or contemporary look, wooden windows can be made to fit your unique taste and design.
+    </p>
+  </div>
+</section>
 
   <button id="backToTopBtn" title="Go to top">⬆️</button>
 
@@ -207,11 +424,6 @@ footer {
             <a class="footer_logo_link" href="#home">
               <span class="footer_logo">
                 <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo" oncontextmenu="return false;">
-              </span>
-            </a>
-            <a class="footer_logo_link" href="https://www.fastwarm.com/" style="padding-top:20px;">
-              <span class="footer_logo" >
-                <img src="fastwarm-logo.png" alt="Fastwarm" oncontextmenu="return false;">
               </span>
             </a>
           </div>
@@ -436,7 +648,40 @@ footer {
   });
   
   
+
   
+
+
+
+
+
+
+// Text content for each type of window
+const windowDescriptions = {
+  'casement': 'Casement windows are considered a classic style...',
+  // ... other descriptions for each data-type
+};
+
+document.querySelectorAll('.wrapper_img').forEach(function(container) {
+  const type = container.getAttribute('data-type');
+  const text = windowDescriptions[type];
+  
+  container.addEventListener('mouseenter', function() {
+    const modalText = document.createElement('p');
+    modalText.className = 'modal-text';
+    modalText.textContent = text;
+    container.querySelector('.card-text-overlay').appendChild(modalText);
+  });
+
+  container.addEventListener('mouseleave', function() {
+    const modalText = container.querySelector('.modal-text');
+    if (modalText) {
+      modalText.remove();
+    }
+  });
+});
+
+
   </script>
   
   </html>
