@@ -216,11 +216,6 @@ p {
   object-fit: cover; /* Заповнює блок, зберігаючи пропорції */
   /* transition: transform 0.3s ease-in-out; */
 }
-
-
-
-
-
 /* CSS for the service cards */
 .service-card {
   width: 500px; /* Set a fixed width */
@@ -312,19 +307,75 @@ transition: opacity 0.6s;
 .service-card:hover .service-card-inner {
   transform: rotateY(180deg);
 }
+.submenu {
+  display: none;
+  position: absolute;
+  left: 100%; /* Align to the right of the parent item */
+  top: 0;
+  z-index: 1000;
+  background-color: #fff; /* Background color of submenu */
+  /* Add additional styling for the submenu here (e.g., box-shadow, padding, etc.) */
+}
 
+/* Display submenu on hover */
+.dropdown:hover .submenu {
+  display: block;
+  margin-left: 100px;
+}
 
+.dropdown-menu2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  background-color: #F7F7F7; 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width:260px;
+  border-radius:10px;
+  transition:
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 1s, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-toggle2{
+  background-color: transparent;
+  
+}
+.dropdown{
+  display: flex; 
+  flex-wrap: nowrap;
+}
+.dropdown a{
+  width: 200px;
+}
+.dropdown-menu2-mob{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  background-color: #F7F7F7; 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width:260px;
+  border-radius:10px;
+  transition:
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 1s, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-menu2-mob-list{
+  display: flex;
+    flex-wrap: nowrap;
+}
 
-
-
-
-
-
-
-
-
-
-
+.dropdown-menu2-mob-list a{
+  min-width: 100px;
+}
 
 
 
@@ -435,9 +486,45 @@ p {
           <li class="item dropdown">
             <a class="item-menu" href="#serv">SERVICES</a>
             <ul class="dropdown-menu">
-                <li><a href="windows.html">Windows</a></li>
-                <li><a href="doors.html">Doors</a></li>
-                <li><a href="#window-sills">Fences</a></li>
+              <li class="dropdown">
+                <a href="windows.html">Windows</a>
+                <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#">Casement windows</a></li>
+                  <li><a href="#">Flush casement windows</a></li>
+                  <li><a href="#">Sash windows</a></li>
+                  <li><a href="#">Tilt and turn windows</a></li>
+                  <li><a href="#">Bay windows</a></li>
+                  <li><a href="#">Bow windows</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="doors.html">Doors</a>
+                <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#">Battened and дedged doors</a></li>
+                  <li><a href="#">Wooden dutch doors</a></li>
+                  <li><a href="#">Bifold doors</a></li>
+                  <li><a href="#">Wooden french doors</a></li>
+                  <li><a href="#">Panelled doors</a></li>
+                  <li><a href="#">Hollow core doors</a></li>
+                  <li><a href="#">Wooden louvered doors</a></li>
+                  <li><a href="#">Barn doors</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#window-sills">Fences</a>
+                <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#">Board-on-board</a></li>
+                  <li><a href="#">Side-by-side</a></li>
+                  <li><a href="#">Shadowbox</a></li>
+                  <li><a href="#">Lattice</a></li>
+                  <li><a href="#">Louvered</a></li>
+                  <li><a href="#">Picket</a></li>
+                </ul>
+              </li>
+      
         </ul>
         <li class="item">
           <a class="item-menu" href="#proj">PROJECTS</a>
@@ -467,12 +554,47 @@ p {
           <li class="mob-list_item dropdown2">
             <a class="mob-list_link" href="#serv">SERVICES</a>
             <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
-                      <ul class="dropdown-menu2">
-                        <li><a href="windows.html">Windows</a></li>
-                        <li><a href="doors.html">Doors</a></li>
-                        <li><a href="#window-sills">Fences</a></li>
+                      <ul class="dropdown-menu2 dropdown-menu2-mob">
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="windows.html">Windows</a>
+                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#">Casement windows</a></li>
+                            <li><a href="#">Flush casement windows</a></li>
+                            <li><a href="#">Sash windows</a></li>
+                            <li><a href="#">Tilt and turn windows</a></li>
+                            <li><a href="#">Bay windows</a></li>
+                            <li><a href="#">Bow windows</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="doors.html">Doors</a>
+                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#">Battened and дedged doors</a></li>
+                            <li><a href="#">Wooden dutch doors</a></li>
+                            <li><a href="#">Bifold doors</a></li>
+                            <li><a href="#">Wooden french doors</a></li>
+                            <li><a href="#">Panelled doors</a></li>
+                            <li><a href="#">Hollow core doors</a></li>
+                            <li><a href="#">Wooden louvered doors</a></li>
+                            <li><a href="#">Barn doors</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="#window-sills">Fences</a>
+                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#">Board-on-board</a></li>
+                            <li><a href="#">Side-by-side</a></li>
+                            <li><a href="#">Shadowbox</a></li>
+                            <li><a href="#">Lattice</a></li>
+                            <li><a href="#">Louvered</a></li>
+                            <li><a href="#">Picket</a></li>
+                          </ul>
+                        </li>
                       </ul>
-          </li>  
+                    </li>  
           <li class="mob-list_item">
             <a class="mob-list_link" href="#proj">PROJECTS</a>
           </li> 
@@ -619,7 +741,8 @@ p {
         <!-- Text and arrow for the back of the card -->
         <div class="card-text-overlay">
           <div class="card-text"> 
-            <ul ><li>Casement Windows</li>
+            <ul>
+            <li>Casement Windows</li>
             <li>Flush Casement Windows</li>
             <li>Sash Windows</li>
             <li>Tilt and Turn Windows</li>
@@ -789,11 +912,11 @@ p {
               <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo" oncontextmenu="return false;">
             </span>
           </a>
-          <a class="footer_logo_link" href="https://www.fastwarm.com/" style="padding-top:20px;">
+          <!-- <a class="footer_logo_link" href="https://www.fastwarm.com/" style="padding-top:20px;">
             <span class="footer_logo" >
               <img src="fastwarm-logo.png" alt="Fastwarm" oncontextmenu="return false;">
             </span>
-          </a>
+          </a> -->
         </div>
 
 
@@ -872,32 +995,36 @@ p {
   }
   });
   
+
   document.addEventListener("DOMContentLoaded", function() {
-    var toggles2 = document.querySelectorAll('.dropdown-toggle2');
-    
-    toggles2.forEach(function(toggle) {
-        toggle.addEventListener('click', function(event) {
-            event.stopPropagation(); // чтобы предотвратить всплытие события
-            var menu = this.nextElementSibling;
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        });
+  // Вішаємо обробники на всі кнопки dropdown
+  var toggles2 = document.querySelectorAll('.dropdown-toggle2');
+  // Вішаємо обробники на всі пункти меню dropdown
+  var dropdowns2 = document.querySelectorAll('.dropdown');
+
+  // Для кожного dropdown-toggle2 міняємо поведінку на mouseover
+  toggles2.forEach(function(toggle) {
+    var menu = toggle.nextElementSibling;
+    toggle.parentNode.addEventListener('mouseover', function() {
+      menu.style.display = 'block';
     });
-  
-    // Дополнительно: закрыть меню при нажатии вне его на мобильной версии
-    document.body.addEventListener('click', function(event) {
-        if (!event.target.closest('.dropdown2')) {
-            var menus = document.querySelectorAll('.mob-menu .dropdown-menu2');
-            menus.forEach(function(menu) {
-                menu.style.display = 'none';
-            });
-        }
+    toggle.parentNode.addEventListener('mouseout', function() {
+      menu.style.display = 'none';
     });
   });
-  
+
+  // Також додаємо обробник на mouseout для самого меню dropdown-menu2
+  dropdowns2.forEach(function(dropdown) {
+    var menu = dropdown.querySelector('.dropdown-menu2');
+    menu.addEventListener('mouseout', function() {
+      menu.style.display = 'none';
+    });
+    menu.addEventListener('mouseover', function() {
+      menu.style.display = 'block';
+    });
+  });
+});
+
   (() => {
   const refs = {
     openMenuBtn: document.querySelector("[data-menu-open]"),
