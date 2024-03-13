@@ -206,6 +206,478 @@
 .info-content{
   text-align: justify;
 }
+
+
+
+
+
+
+
+
+
+
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container {
+  position: absolute;
+  top: 30%;
+  text-align: center;
+  color: #ffffff;
+  max-width: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.caption {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.list-text{
+  background-color: #ffffff;
+  font-size: 18px;
+}
+/* Add this inside a <style> tag in the head or in your external stylesheet */
+  .container2{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: stretch; /* This will make sure both children fill the height */
+}
+
+.about-us-content {
+  max-width: 1200px;
+  margin-left: auto;
+  padding: 0;
+}
+
+.section-title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.title-underline {
+  height: 4px;
+  width: 160px;
+  background-color: #007aff;
+  margin-bottom: 30px;
+}
+
+.about-us-text {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  margin-top: -50px;
+  z-index: 100;
+}
+/* Main container for the About Us section */
+#about-us {
+  
+  background-color: #eaeaea; /* Different background color */
+  padding: 10px;
+}
+
+/* Container for the image */
+.image-container {
+  flex: 1; /* Take up half the space */
+  display: flex; /* Use flexbox to align the image */
+}
+
+/* Styles for the image itself */
+.image-container img {
+  width: 100%;
+  object-fit: cover; /* Cover the entire div */
+}
+
+/* Container for the text content */
+.text-content-container {
+  flex: 1; /* Take up the remaining half of the space */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  padding: 20px;
+  background-color: #fff; /* White background for the text box */
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.2); /* Shadow effect */
+  margin-left: -50px; /* Pull the text box over the image slightly */
+}
+
+/* Title styles */
+.section-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+.section-title-first{
+
+    color: #333;
+
+}
+/* List styles */
+.service-list {
+  column-count: 2; /* Split the list into two columns */
+  list-style: none; /* Remove default list styling */
+  padding: 20px;
+}
+
+.service-list li {
+  margin-bottom: 10px; /* Space out the list items */
+}
+.section-title {
+    margin: 20px;
+    color: #333;
+    text-align: center;
+}
+.services-grid{
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#our-services .unique-service-item:hover img {
+  /* transform: scale(1.1); */
+}
+#our-services .unique-service-item:hover .text-container-serv {
+  visibility: visible;
+  opacity: 1;
+}
+/* Очищення плаваючих елементів */
+#our-services::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#our-services .unique-service-item .text-container-serv {
+  position: absolute;
+  bottom: 4%; /* Центрування від верху */
+  left: 50%; /* Центрування зліва */
+  transform: translate(-50%, -10%); /* Зміщення тексту на 50% вліво і вгору для точного центрування */
+  color: #fff;
+  /* transition: visibility 0s, opacity 0.3s linear; */
+  text-align: center; /* Центрування тексту всередині контейнера */
+  padding: 10px;
+  width: 100%;
+  /* white-space: nowrap; Запобігає переносу тексту на новий рядок */
+}
+.text-container-serv {
+  font-size: 12px; /* Розмір шрифту */
+  /* інші стилі */
+}
+.text-container-serv .caption{
+  font-size: 18px;
+}
+.caption-serv{
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Стилі для елементів послуг */
+#our-services .unique-service-item  {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px; /* Відступи між елементами */
+  height: 460px; /* Фіксована висота для усіх блоків */
+  width: 460px;
+  box-sizing: border-box; /* Убезпечуємося, що відступи враховуються у внутрішній ширині */
+}
+
+#our-services .unique-service-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Заповнює блок, зберігаючи пропорції */
+  /* transition: transform 0.3s ease-in-out; */
+}
+/* CSS for the service cards */
+.service-card {
+  width: 500px; /* Set a fixed width */
+  height: 500px; /* Height equals the width */
+  margin: 20px;
+  perspective: 1000px; /* Perspective for 3D effect */
+}
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg); /* Rotate to show the back on hover */
+}
+.service-card-front img,
+.service-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the card area with the image */
+  border-radius: 10px;
+}
+.card-text-overlay {
+  position: absolute;
+  bottom: 30px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.card-text {
+  font-size: 16px;
+  margin-bottom: 10px; /* Space for the 'More' link */
+}
+.more-info {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background: none; /* Transparent background for the link */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.more-info:hover {
+  text-decoration: underline; 
+}
+.service-card:hover .service-card-back,
+.service-card:hover .card-text-overlay,
+.service-card:hover .more-info {
+opacity: 1; 
+transition: opacity 0.6s; 
+}
+.card {
+  width: 300px;
+  height: 200px;
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card-front {
+  background: url('path_to/front.jpg') no-repeat center center;
+  background-size: cover;
+}
+.card-back {
+  background: url('path_to/back.jpg') no-repeat center center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+/* Стилі для внутрішнього блоку карточки, який буде перевертатись */
+.service-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+/* Стилі для передньої та задньої частин карточки */
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  backface-visibility: hidden; /* Приховує зворотню сторону під час перевертання */
+  width: 100%;
+  height: 100%;
+}
+/* Позиціонування задньої частини для її перевертання */
+.service-card-back {
+  transform: rotateY(180deg);
+}
+/* Задаємо перевертання при наведенні курсору миші */
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg);
+}
+.submenu {
+  display: none;
+  position: absolute;
+  left: 100%; /* Align to the right of the parent item */
+  top: 0;
+  z-index: 1000;
+  background-color: #fff; /* Background color of submenu */
+  /* Add additional styling for the submenu here (e.g., box-shadow, padding, etc.) */
+}
+
+/* Display submenu on hover */
+.dropdown:hover .submenu {
+  display: block;
+  margin-left: 100px;
+}
+
+.dropdown-menu2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  background-color: #F7F7F7; 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width:260px;
+  border-radius:10px;
+  transition:
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 1s, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-toggle2{
+  background-color: transparent;
+  
+}
+.dropdown{
+  display: flex; 
+  flex-wrap: nowrap;
+}
+.dropdown a{
+  width: 200px;
+}
+.dropdown-menu2-mob{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  background-color: #F7F7F7; 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width:260px;
+  border-radius:10px;
+  transition:
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 1s, 
+  font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-menu2-mob-list{
+  display: flex;
+    flex-wrap: nowrap;
+}
+
+.dropdown-menu2-mob-list a{
+  min-width: 100px;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px){
+  .text-container {
+  max-width: 90%;
+}
+  .caption {
+  font-size: 32px;
+  font-weight: bold;
+}
+p {
+  font-size: 24px;
+}
+#about-us {
+    flex-wrap: wrap-reverse;
+    margin: 0 auto;
+  
+}
+.image-container {
+    display: block;
+}
+.text-content-container {
+    display: block;
+    margin-left: 0px;
+    flex: none;
+    max-width: 100%;
+    text-align: justify;
+}
+#our-services .unique-service-item {
+    max-height: 400px;
+    max-width: 400px;
+}
+}
+@media screen and (max-width: 820px){
+  .text-container {
+  max-width: 98%;
+}
+.caption {
+  font-size: 26px;
+  font-weight: bold;
+}
+p {
+  font-size: 20px;
+}
+}
+
+@media screen and (max-width: 620px){
+  .text-container {
+  max-width: 60%;
+}
+.service-list {
+    column-count: 1;
+}
+}
+@media screen and (max-width: 540px){
+  .text-container {
+  max-width: 70%;
+}
+}
+
+@media screen and (max-width: 475px){
+  .text-content-container {
+    padding: 10px;
+}
+  .container2 {
+    padding: 0px;
+
+}
+  .text-container {
+  max-width: 90%;
+}
+
+#our-services .unique-service-item {
+    max-height: 360px;
+    max-width: 360px;
+}
+}
+@media screen and (max-width: 360px){
+  .text-container {
+  max-width: 100%;
+}
+#our-services .unique-service-item {
+    max-height: 320px;
+    max-width: 320px;
+}
+}
+
+
+
+
+
   /* Style adjustments for mobile responsiveness */
   @media screen and (max-width: 768px) {
     .info-block {
@@ -213,6 +685,8 @@
     }
   }
 </style>
+
+
 <header class="header">  
   <div class="container main-container">
   <a class="logo" href="">
@@ -229,22 +703,45 @@
           <li class="item dropdown">
             <a class="item-menu" href="#serv">SERVICES</a>
             <ul class="dropdown-menu">
-                <li><a href="#windows">Manufacturing and installation of windows</a></li>
-                <li><a href="#doors">Manufacturing and installation of doors</a></li>
-                <li><a href="#window-sills">Manufacturing and installation of wooden window sills</a></li>
-                <li><a href="#furniture">Manufacturing, assembly, and restoration of furniture</a></li>
-                <li><a href="#frame-construction">Frame construction</a></li>
-                <li><a href="#panels-moldings-cornices">Manufacturing and installation of panels, moldings, and cornices</a></li>
-                <li><a href="#partitions">Manufacturing and installation of wooden partitions</a></li>
-                <li><a href="#fences-gates">Manufacturing and installation of fences and gates</a></li>
-                <li><a href="#roofing-structures">Manufacturing and installation of wooden roofing structures</a></li>
-                <li><a href="#stairs">Manufacturing of stairs for construction</a></li>
-                <li><a href="#parquet">Laying and restoration of parquet</a></li>
-                <li><a href="#terraces">Laying and restoration of terraces</a></li>
-                <li><a href="#wood-treatment">Wood treatment services</a></li>
-                <li><a href="#wood-painting">Wood painting services</a></li>
-                <li><a href="#garden-furniture">Manufacturing of garden furniture</a></li>
-              
+              <li class="dropdown">
+                <a href="windows.html">Windows</a>
+                <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#">Casement windows</a></li>
+                  <li><a href="#">Flush casement windows</a></li>
+                  <li><a href="#">Sash windows</a></li>
+                  <li><a href="#">Tilt and turn windows</a></li>
+                  <li><a href="#">Bay windows</a></li>
+                  <li><a href="#">Bow windows</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="doors.html">Doors</a>
+                <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#">Battened and дedged doors</a></li>
+                  <li><a href="#">Wooden dutch doors</a></li>
+                  <li><a href="#">Bifold doors</a></li>
+                  <li><a href="#">Wooden french doors</a></li>
+                  <li><a href="#">Panelled doors</a></li>
+                  <li><a href="#">Hollow core doors</a></li>
+                  <li><a href="#">Wooden louvered doors</a></li>
+                  <li><a href="#">Barn doors</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#window-sills">Fences</a>
+                <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#">Board-on-board</a></li>
+                  <li><a href="#">Side-by-side</a></li>
+                  <li><a href="#">Shadowbox</a></li>
+                  <li><a href="#">Lattice</a></li>
+                  <li><a href="#">Louvered</a></li>
+                  <li><a href="#">Picket</a></li>
+                </ul>
+              </li>
+      
         </ul>
         <li class="item">
           <a class="item-menu" href="#proj">PROJECTS</a>
@@ -274,24 +771,47 @@
           <li class="mob-list_item dropdown2">
             <a class="mob-list_link" href="#serv">SERVICES</a>
             <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
-                      <ul class="dropdown-menu2">
-                          <li><a href="#windows">Manufacturing and installation of windows</a></li>
-                          <li><a href="#doors">Manufacturing and installation of doors</a></li>
-                          <li><a href="#window-sills">Manufacturing and installation of wooden window sills</a></li>
-                          <li><a href="#furniture">Manufacturing, assembly, and restoration of furniture</a></li>
-                          <li><a href="#frame-construction">Frame construction</a></li>
-                          <li><a href="#panels-moldings-cornices">Manufacturing and installation of panels, moldings, and cornices</a></li>
-                          <li><a href="#partitions">Manufacturing and installation of wooden partitions</a></li>
-                          <li><a href="#fences-gates">Manufacturing and installation of fences and gates</a></li>
-                          <li><a href="#roofing-structures">Manufacturing and installation of wooden roofing structures</a></li>
-                          <li><a href="#stairs">Manufacturing of stairs for construction</a></li>
-                          <li><a href="#parquet">Laying and restoration of parquet</a></li>
-                          <li><a href="#terraces">Laying and restoration of terraces</a></li>
-                          <li><a href="#wood-treatment">Wood treatment services</a></li>
-                          <li><a href="#wood-painting">Wood painting services</a></li>
-                          <li><a href="#garden-furniture">Manufacturing of garden furniture</a></li>
+                      <ul class="dropdown-menu2 dropdown-menu2-mob">
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="windows.html">Windows</a>
+                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#">Casement windows</a></li>
+                            <li><a href="#">Flush casement windows</a></li>
+                            <li><a href="#">Sash windows</a></li>
+                            <li><a href="#">Tilt and turn windows</a></li>
+                            <li><a href="#">Bay windows</a></li>
+                            <li><a href="#">Bow windows</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="doors.html">Doors</a>
+                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#">Battened and дedged doors</a></li>
+                            <li><a href="#">Wooden dutch doors</a></li>
+                            <li><a href="#">Bifold doors</a></li>
+                            <li><a href="#">Wooden french doors</a></li>
+                            <li><a href="#">Panelled doors</a></li>
+                            <li><a href="#">Hollow core doors</a></li>
+                            <li><a href="#">Wooden louvered doors</a></li>
+                            <li><a href="#">Barn doors</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="#window-sills">Fences</a>
+                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#">Board-on-board</a></li>
+                            <li><a href="#">Side-by-side</a></li>
+                            <li><a href="#">Shadowbox</a></li>
+                            <li><a href="#">Lattice</a></li>
+                            <li><a href="#">Louvered</a></li>
+                            <li><a href="#">Picket</a></li>
+                          </ul>
+                        </li>
                       </ul>
-          </li>  
+                    </li>  
           <li class="mob-list_item">
             <a class="mob-list_link" href="#proj">PROJECTS</a>
           </li> 
@@ -301,6 +821,7 @@
 
 
 </header>
+
 <body>
 
   <section class="window-details details">
