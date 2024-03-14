@@ -92,7 +92,12 @@ p {
   background-color: #007aff;
   margin-bottom: 30px;
 }
-
+.title-underline2 {
+  height: 4px;
+  width: 140px;
+  background-color: #007aff;
+  margin-bottom: 30px;
+}
 .about-us-text {
   background-color: #fff;
   padding: 20px;
@@ -131,6 +136,49 @@ p {
   margin-left: -50px; /* Pull the text box over the image slightly */
 }
 
+
+
+
+
+#about-material {
+  background-color: #eaeaea; /* Change this to your preferred background color */
+  padding: 10px 0; /* Adds padding above and below the inner container */
+}
+#about-material .text-content-container2 {
+  flex: 1; /* Assigns 50% of the space to text */
+  padding: 20px 20px;
+  order: 1; /* Ensures text is on the left */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.2); /* Shadow effect */
+}
+
+#about-material .image-container2 {
+  flex: 1; /* Assigns 50% of the space to image */
+  order: 2; /* Ensures image is on the right */
+  background-color:white;
+}
+
+#about-material .image-container2 img {
+  width: 100%;
+  margin:5px;
+  /* padding: 5px 5px; */
+  display: block; /* Removes bottom space under the image */
+  /* background-color: white; */
+}
+
+.container2 {
+   padding: 0px; 
+   background-color: white;
+  }
+
+
+
+
+
+
 /* Title styles */
 .section-title {
   margin-bottom: 20px;
@@ -147,7 +195,18 @@ p {
   list-style: none; /* Remove default list styling */
   padding: 20px;
 }
-
+.service-list2 {
+  column-count: 1; /* Split the list into two columns */
+  list-style: none; /* Remove default list styling */
+  padding: 20px;
+}
+.service-list2 li {
+  margin-bottom: 20px;
+}
+.service-list2-bold{
+  font-weight: bold;
+  font-style: italic;
+}
 .service-list li {
   margin-bottom: 10px; /* Space out the list items */
 }
@@ -376,6 +435,7 @@ transition: opacity 0.6s;
 .dropdown-menu2-mob-list a{
   min-width: 100px;
 }
+
 
 
 
@@ -998,125 +1058,48 @@ p {
   </div>
 </section>
 
-      
-<!-- <div class="service-card">
-  <div class="service-card-inner">
-    <div class="service-card-front">
-      <img src="1.jpg" alt="Windows">
+ 
+
+<section id="about-material">
+  <div class="container2">
+    <div class="text-content-container2">
+      <!-- Text content goes here -->
+      <h2 class="section-title-first">MATERIALS</h2>
+          <div class="title-underline2"></div>
+
+                <!-- <h3 class="list-title">Our Services</h3> -->
+                <p class="list-text">Making wooden furniture is an art that begins with choosing the right material. Our company strives to offer its customers only the best materials that will ensure the beauty, functionality, and durability of each product. </p>
+                <p class="list-text">Here are some of the materials we use and their benefits:</p>
+                <div class="service-list2">
+                  <!-- Adjust the number of columns as needed -->
+                  <ol>
+                    <li><span class="service-list2-bold" >Natural Wood:</span> We work with various types of natural wood, such as oak, maple, beech, pine, birch, spruce, and cherry. These materials have a unique texture and natural beauty, giving the furniture elegance and sophistication, as well as providing strength and durability.</li>
+                    <li><span class="service-list2-bold">Chipboard (Particle Board):</span> We use various types of chipboard including laminated, regular, and melamine. These materials offer a wide range of shades and textures, and provide strength and resistance to moisture, making them an ideal choice for functional furniture.</li>
+                    <li><span class="service-list2-bold">MDF (Medium Density Fiberboard):</span> Plain, lacquered, and melamine MDF is another popular choice for furniture making. MDF provides a smooth surface for decorative coatings, is easy to process, and has excellent strength characteristics.</li>
+                    <li><span class="service-list2-bold">MDF (Medium Density Fiberboard):</span>Plain, lacquered, and melamine MDF is another popular choice for furniture making. MDF provides a smooth surface for decorative coatings, is easy to process, and has excellent strength characteristics.</li>
+                    <li><span class="service-list2-bold">Plywood:</span> We use both regular and laminated plywood. Plywood is lightweight and durable, ideal for creating furniture designs of varying complexity, as well as for finishing surfaces.</li>
+                    <li><span class="service-list2-bold">Bamboo:</span> For those who value environmental friendliness, we offer bamboo furniture. Bamboo is a sustainable and fast-growing material that is naturally beautiful and highly durable.</li>
+                    <li><span class="service-list2-bold">Bamboo:</span> For those who value environmental friendliness, we offer bamboo furniture. Bamboo is a sustainable and fast-growing material that is naturally beautiful and highly durable.</li>
+                    <li><span class="service-list2-bold">Rubber (Rubber Wood):</span> We also use rubber to create eco-friendly and comfortable furniture. This material is flexible, resilient, and durable, making it ideal for creating elegant decorative elements and functional furniture pieces.</li>
+                    <li><span class="service-list2-bold">Tricoya:</span> Tricoya is a revolutionary wood composite material known for its resistance to moisture, rot, and mold. It is highly resistant to weather conditions, does not expand or shrink, and is eco-friendly as it is produced from sustainable forest resources. Tricoya is versatile and can be used for furniture, building facades, doors, window frames, and more. Our company, Master Builders VS LTD, is an expert in using Tricoya, guaranteeing the highest quality and superior performance in our projects.</li>
+                    <!-- Add more list items here -->
+                  </ol>
+                  <p class="list-text">Our company guarantees the use of only high-quality materials in the manufacture of wooden furniture. We strive to please our customers by offering a wide selection of materials that ensure superior quality and durability in each product.</p>
+                </div>
     </div>
-    <div class="service-card-back">
-      <img src="1.jpg" alt="Windows">
-      <p>Текст на звороті карточки</p>
-      <a href="service-page.html" class="more-arrow">Більше →</a>
+    <div class="image-container2">
+      <img src="material/111.jpg" alt="Our Craftsmanship">
+      <img src="material/22.jpg" alt="Our Craftsmanship">
+      <img src="material/3.jpg" alt="Our Craftsmanship">
     </div>
   </div>
-</div>
-<div class="service-card">
-  <div class="service-card-inner">
-    <div class="service-card-front">
-      <img src="1.jpg" alt="Windows">
-    </div>
-    <div class="service-card-back">
-      <img src="1.jpg" alt="Windows">
-      <p>Текст на звороті карточки</p>
-      <a href="service-page.html" class="more-arrow">Більше →</a>
-    </div>
-  </div>
-</div>
+</section>
 
-    <div class="unique-service-item swiper-container" id="windows">
-      <img src="1.jpg" alt="Windows">
-      <div class="text-container-serv">
-        <p class="caption-serv">MANUFACTURING AND INSTALLATION OF WINDOWS</p><br>
-      </div>
-    </div>
 
-    <div class="unique-service-item swiper-container" id="doors">
-      <img src="2.webp" alt="Doors">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of doors</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="window-sills">
-      <img src="images.jpg" alt="Window Sills">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of wooden window sills</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="furniture">
-      <img src="44.jpg" alt="Furniture">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing, assembly, and restoration of furniture</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="frame-construction">
-      <img src="5.jpg" alt="Frame Construction">
-      <div class="text-container-serv">
-        <p class="caption-serv">Frame construction</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="panels-moldings-cornices">
-      <img src="6.jpg" alt="Panels, Moldings, Cornices">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of panels, moldings, and cornices</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="partitions">
-      <img src="7.jpg" alt="Partitions">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of wooden partitions</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="fences-gates">
-      <img src="8.jpg" alt="Fences and Gates">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of fences and gates</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="roofing-structures">
-      <img src="9.jpg" alt="Roofing Structures">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing and installation of wooden roofing structures</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="stairs">
-      <img src="10.jpg" alt="Stairs">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing of stairs for construction</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="parquet">
-      <img src="11.jpg" alt="Parquet">
-      <div class="text-container-serv">
-        <p class="caption-serv">Laying and restoration of parquet</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="terraces">
-      <img src="12.jpg" alt="Terraces">
-      <div class="text-container-serv">
-        <p class="caption-serv">Laying and restoration of terraces</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="wood-treatment">
-      <img src="13.jpg" alt="Wood Treatment">
-      <div class="text-container-serv">
-        <p class="caption-serv">Wood treatment services</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="wood-painting">
-      <img src="14.jpg" alt="Wood Painting">
-      <div class="text-container-serv">
-        <p class="caption-serv">Wood painting services</p>
-      </div>
-    </div>
-    <div class="unique-service-item" id="wood-treatment">
-      <img src="15.png" alt="Wood Treatment">
-      <div class="text-container-serv">
-        <p class="caption-serv">Manufacturing of garden furniture</p>
-      </div>
-    </div> -->
-  <!-- </div>
-</section> -->
+
+
+
+
 
     
     </main>
