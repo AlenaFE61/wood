@@ -441,6 +441,9 @@ p {
   .text-container {
   max-width: 70%;
 }
+.dropdown-menu2-mob {
+    width: 140px;
+}
 }
 
 @media screen and (max-width: 475px){
@@ -459,6 +462,9 @@ p {
     max-height: 360px;
     max-width: 360px;
 }
+.mob-list {
+  padding-left: 0px;
+}
 }
 @media screen and (max-width: 360px){
   .text-container {
@@ -467,6 +473,12 @@ p {
 #our-services .unique-service-item {
     max-height: 320px;
     max-width: 320px;
+}
+.dropdown-menu2-mob {
+    left: -20px;
+}
+.dropdown-menu2 {
+    max-width: 170px;
 }
 }
 </style>
@@ -1251,6 +1263,41 @@ p {
     });
   });
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Отримуємо всі елементи з класом "dropdown2"
+  var dropdowns = document.querySelectorAll('.dropdown2');
+
+  // Додаємо обробник подій для кожного елемента
+  dropdowns.forEach(function(dropdown) {
+    var toggle = dropdown.querySelector('.dropdown-toggle2');
+    var menu = dropdown.querySelector('.dropdown-menu2-mob');
+
+    // При кліку на кнопку перемикача
+    toggle.addEventListener('click', function() {
+      // Перевіряємо, чи вже відкрите меню
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        // Закриваємо всі відкриті підменю
+        document.querySelectorAll('.dropdown-menu2-mob').forEach(function(openMenu) {
+          openMenu.style.display = 'none';
+        });
+        // Відкриваємо поточне меню
+        menu.style.display = 'block';
+      }
+    });
+  });
+});
+
+
+
+
+
+
 
   (() => {
   const refs = {
