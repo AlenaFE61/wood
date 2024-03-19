@@ -230,7 +230,7 @@
 
 <header class="header">  
   <div class="container main-container">
-  <a class="logo" href="">
+  <a class="logo" href="wood.html">
 <img class="logo_img" src="img/logo/7smol.png" alt="Master Builders VS LTD Logo" >
 </a>
       <nav class="navigation-menu" id="main-nav">
@@ -319,7 +319,7 @@
                       <ul class="dropdown-menu2 dropdown-menu2-mob">
                         <li class="dropdown-menu2-mob-list" >
                           <a href="windows.html">Windows</a>
-                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
                           <ul class="dropdown-menu2">
                             <li><a href="#">Casement windows</a></li>
                             <li><a href="#">Flush casement windows</a></li>
@@ -331,7 +331,7 @@
                         </li>
                         <li class="dropdown-menu2-mob-list" >
                           <a href="doors.html">Doors</a>
-                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
                           <ul class="dropdown-menu2">
                             <li><a href="#">Battened and ledged doors</a></li>
                             <li><a href="#">Wooden dutch doors</a></li>
@@ -345,7 +345,7 @@
                         </li>
                         <li class="dropdown-menu2-mob-list" >
                           <a href="#window-sills">Fences</a>
-                          <button class="dropdown-toggle2">➜</button> <!-- Добавленная кнопка -->
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
                           <ul class="dropdown-menu2">
                             <li><a href="#">Board-on-board</a></li>
                             <li><a href="#">Side-by-side</a></li>
@@ -556,6 +556,8 @@ Wooden bay windows offer an even more stylish and durable option. They are known
   <script>
   
  
+
+
   // Активне меню та скрол до выдповыдного блоку
   // Ждем события DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function() {
@@ -574,6 +576,38 @@ Wooden bay windows offer an even more stylish and durable option. They are known
   }
   });
   
+
+
+
+
+  (() => {
+  const refs = {
+    openMenuBtn: document.querySelector("[data-menu-open]"),
+    closeMenuBtn: document.querySelector("[data-menu-close]"),
+    menu: document.querySelector("[data-menu]"),
+    body: document.querySelector("body"),
+    menuList: document.querySelector(".mob-list"),
+  };
+
+  refs.openMenuBtn.addEventListener("click", toggleMenu);
+  refs.closeMenuBtn.addEventListener("click", toggleMenu);
+  refs.menuList.addEventListener("click", removeMenu);
+
+  function toggleMenu() {
+    refs.menu.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+  }
+  function removeMenu() {
+    refs.menu.classList.add("is-hidden");
+    refs.body.classList.remove("no-scroll");
+  }
+})();
+  
+
+
+
+
+
 
   document.addEventListener("DOMContentLoaded", function() {
   // Вішаємо обробники на всі кнопки dropdown
@@ -605,63 +639,64 @@ Wooden bay windows offer an even more stylish and durable option. They are known
 });
 
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
-  // Отримуємо всі елементи з класом "dropdown2"
-  var dropdowns = document.querySelectorAll('.dropdown2');
-
-  // Додаємо обробник подій для кожного елемента
-  dropdowns.forEach(function(dropdown) {
+  // Обробник для мобільного dropdown меню
+  document.querySelectorAll('.dropdown2').forEach(function(dropdown) {
     var toggle = dropdown.querySelector('.dropdown-toggle2');
     var menu = dropdown.querySelector('.dropdown-menu2-mob');
 
-    // При кліку на кнопку перемикача
-    toggle.addEventListener('click', function() {
-      // Перевіряємо, чи вже відкрите меню
-      if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-      } else {
-        // Закриваємо всі відкриті підменю
-        document.querySelectorAll('.dropdown-menu2-mob').forEach(function(openMenu) {
-          openMenu.style.display = 'none';
-        });
-        // Відкриваємо поточне меню
+    // Клік на кнопку для перемикання мобільного меню
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault(); // Запобігання стандартної поведінки
+      var isOpen = menu.style.display === 'block';
+      closeAllMobileMenus(); // Закриваємо всі відкриті мобільні меню
+      if (!isOpen) {
         menu.style.display = 'block';
+      }
+    });
+
+    // Закриття меню при кліку за його межами
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target)) {
+        closeAllMobileMenus();
+      }
+    });
+  });
+
+  function closeAllMobileMenus() {
+    document.querySelectorAll('.dropdown-menu2-mob').forEach(function(menu) {
+      menu.style.display = 'none';
+    });
+  }
+
+  // Закриття мобільного меню та перехід за посиланнями
+  document.querySelectorAll('.mob-list_link, .dropdown-menu2 a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (link.getAttribute('href').startsWith('#')) {
+        e.preventDefault(); // Запобігання стандартної поведінки для якорних посилань
+        // Перехід до вказаної секції
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+        // Закриваємо мобільне меню
+        const mobMenu = document.querySelector(".mob-menu");
+        mobMenu.classList.add("is-hidden");
+        document.body.classList.remove("no-scroll");
+      } else {
+        // Якщо це зовнішнє посилання, нічого не робимо, перехід здійснюється за замовчуванням
       }
     });
   });
 });
 
 
-
-
-
-
-
-  (() => {
-  const refs = {
-    openMenuBtn: document.querySelector("[data-menu-open]"),
-    closeMenuBtn: document.querySelector("[data-menu-close]"),
-    menu: document.querySelector("[data-menu]"),
-    body: document.querySelector("body"),
-    menuList: document.querySelector(".mob-list"),
-  };
-
-  refs.openMenuBtn.addEventListener("click", toggleMenu);
-  refs.closeMenuBtn.addEventListener("click", toggleMenu);
-  refs.menuList.addEventListener("click", removeMenu);
-
-  function toggleMenu() {
-    refs.menu.classList.toggle("is-hidden");
-    refs.body.classList.toggle("no-scroll");
-  }
-  function removeMenu() {
-    refs.menu.classList.add("is-hidden");
-    refs.body.classList.remove("no-scroll");
-  }
-})();
-  
 
 
 // Кнопка скролу догори
@@ -698,35 +733,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 
-
-
-  // Мобільне меню
-  document.querySelectorAll('.mob-list_link, .dropdown-menu2 a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // Закриття мобільного меню
-    const mobMenu = document.querySelector(".mob-menu");
-    mobMenu.classList.add("is-hidden");
-    document.body.classList.remove("no-scroll");
-
-    // Перехід до відповідної секції
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
-    if (target) {
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-
-
 // ватсап
 window.onload = function() {
   setTimeout(function() {
@@ -737,6 +743,7 @@ window.onload = function() {
 function closeWhatsAppIcon() {
   document.getElementById('whatsapp-icon').style.display = 'none';
 }
+
 
 
   

@@ -390,10 +390,6 @@ transition: opacity 0.6s;
   background-color: transparent;
   
 }
-.dropdown{
-  display: flex; 
-  flex-wrap: nowrap;
-}
 .dropdown a{
   width: 200px;
 }
@@ -422,9 +418,45 @@ transition: opacity 0.6s;
 .dropdown-menu2-mob-list a{
   min-width: 100px;
 }
+.serv-item-wrap{
+  display: flex;
+}
 
 
 
+
+
+.swiper-container-3d {
+  perspective: 1200px; /* Adjust the depth perspective as needed */
+  width: 100%; /* Set the width you prefer */
+  overflow: hidden;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.swiper-slide2 {
+  /* Center the text or content inside the slide */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Example style */
+}
+
+.swiper-slide2 img {
+  width: 520px; /* Your desired image width */
+  height: 520px; /* Your desired image height, maintaining a 3:4 aspect ratio */
+  object-fit: cover; /* Ensures the images cover the slide area */
+  border-radius: 10px; /* Rounded corners as requested */
+}
+
+/* Adjust the scaling for active and neighboring slides */
+.swiper-slide-active {
+  transform: scale(1);
+}
+
+.swiper-slide-prev2, .swiper-slide-next2 {
+  transform: scale(0.8);
+}
 
 
 
@@ -481,6 +513,10 @@ p {
 .service-list {
     column-count: 1;
 }
+.swiper-slide2 img {
+  max-width: 280px;
+  max-height: 280px;
+ }
 }
 @media screen and (max-width: 540px){
 .dropdown-menu2-mob {
