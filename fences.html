@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+  <title>Wood Services</title>
+  <meta name="description" content="">
+</head>
+<style>
+ body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .window-details {
+    gap: 20px;
+    padding: 20px;
+    background-color: #eaeaea;
+    padding: 10px;
+    margin-top: 50px;
+  }
+.details{
+  margin-top: 150px;
+}
+  .window-gallery {
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+
+  .window-gallery h2 {
+    text-align: center;
+  }
+
+  .gallery-images img {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .windows_title{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .title-underline {
+    height: 4px;
+    width: 124px;
+    background-color: #007aff;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.gallery-images{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  .wrapper_img {
+    position: relative;
+    width: 600px;
+    height: 600px;
+  }
+
+  .photo {
+    width: 600px;
+    height: 600px;
+  }
+
+  .card-text-overlay {
+    position: absolute;
+    bottom: 30px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    margin-bottom: 10px; /* Space for the 'More' link */
+  }
+    .info-header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;    
+      margin-top: 40px;
+}
+
+    .info-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .info-list {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .info-list li {
+      margin-bottom: 5px;
+    }
+
+    .mission-statement {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .container {
+    z-index: 10;
+    position: relative;
+  }
+
+  /* This will set the info-block to take 70% width and center it, with a lighter background */
+  .info-block {
+    width: 70%; /* Use 70% of the viewport width */
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background, adjust the color as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds a slight shadow for depth */
+    font-family: Arial, sans-serif;
+  }
+
+  /* Make sure that your header is not covering the sections below */
+  header {
+    z-index: 1000; /* Higher z-index means it will be on top */
+    position: relative; /* Position relative so z-index takes effect */
+  }
+
+
+  .wrapper_img {
+  position: relative;
+  width: 600px;
+  height: 560px; /* Adjust as needed */
+  /* other styling */
+}
+
+.window-title {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white; /* Change as needed */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 5px 0; /* Padding for spacing */
+  margin: 0; /* Reset margin */
+  display: block; /* Ensure it's always a block */
+  transition: all 0.3s ease; /* Transition for the hover effect */
+}
+
+.window-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent overlay */
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+.wrapper_img:hover .window-description {
+  visibility: visible;
+  opacity: 1;
+}
+.info-content{
+  text-align: justify;
+}
+.dropdown:hover .dropdown-menu {
+    text-align: left;
+    color: black;
+}
+
+
+
+  /* Style adjustments for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .info-block {
+      width: 90%; /* On smaller screens, the info-block should take more space */
+    }
+  }
+  @media screen and (max-width: 540px) {
+  .nav-menu{
+    text-align: left;
+  }
+  }
+</style>
+
+
+
+<header class="header">  
+  <div class="container main-container">
+  <a class="logo" href="wood.html">
+<img class="logo_img" src="img/logo/7smol.png" alt="Master Builders VS LTD Logo" >
+</a>
+      <nav class="navigation-menu" id="main-nav">
+        <ul class="list mob-list">
+          <li class="item">
+            <a class="item-menu" href="wood.html">HOME</a>
+          </li>
+          <li class="item">
+            <a class="item-menu" href="#about-us">ABOUT US</a>
+          </li>
+          <li class="item dropdown">
+            <a class="item-menu" href="#our-services">SERVICES</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown serv-item-wrap">
+                <a href="windows.html">Windows</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a class="external-link" href="windows.html#windows1">Casement windows</a></li>
+                  <li><a class="external-link" href="windows.html#windows1">Casement windows</a></li>
+                  <li><a class="external-link" href="windows.html#windows2">Flush casement windows</a></li>
+                  <li><a class="external-link" href="windows.html#windows3">Sash windows</a></li>
+                  <li><a class="external-link" href="windows.html#windows4">Tilt and turn windows</a></li>
+                  <li><a class="external-link" href="windows.html#windows5">Bay windows</a></li>
+                  <li><a class="external-link" href="windows.html#windows6">Bow windows</a></li>
+                </ul>
+              </li>
+              <li class="dropdown serv-item-wrap">
+                <a href="doors.html">Doors</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="doors.html#doo">Battened and ledged doors</a></li>
+                  <li><a href="doors.html#doo">Wooden dutch doors</a></li>
+                  <li><a href="doors.html#doo">Bifold doors</a></li>
+                  <li><a href="doors.html#doors1">Wooden french doors</a></li>
+                  <li><a href="doors.html#doors1">Panelled doors</a></li>
+                  <li><a href="doors.html#doors1">Hollow core doors</a></li>
+                  <li><a href="doors.html#doors4">Wooden louvered doors</a></li>
+                  <li><a href="doors.html#doors4">Barn doors</a></li>
+                </ul>
+              </li>
+              <li class="dropdown serv-item-wrap">
+                <a href="kitchens.html">Kitchens</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="#kit">Kitchens with an island</a></li>
+                  <li><a href="#kit">Kitchens with built-in appliances</a></li>
+                  <li><a href="#kit">Kitchens with open shelves</a></li>
+                  <li><a href="#kitchens1">Kitchens with pull-out drawers</a></li>
+                  <li><a href="#kitchens1">Dining tables</a></li>
+                  <li><a href="#kitchens1">Dining chairs</a></li>
+                  <li><a href="#kitchens4">Kitchens with a bar counter</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown serv-item-wrap">
+                <a href="furniture.html">Furniture</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="furniture.html#fur">Cabinets</a></li>
+                  <li><a href="furniture.html#fur">Chests of drawers</a></li>
+                  <li><a href="furniture.html#fur">Cabinets</a></li>
+                  <li><a href="furniture.html#furniture1">Display cabinets</a></li>
+                  <li><a href="furniture.html#furniture1">Bedside tables</a></li>
+                  <li><a href="furniture.html#furniture1">Media consoles</a></li>
+                  <li><a href="furniture.html#furniture4">Wardrobes</a></li>
+                  <li><a href="furniture.html#furniture4">Panels, Moldings, Cornices</a></li>
+                  <li><a href="furniture.html#furniture4">Partitions</a></li>
+                </ul>
+              </li>
+              
+              <li class="dropdown serv-item-wrap">
+                <a href="soft.html">Soft furniture</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="soft.html#sof">Sofas</a></li>
+                  <li><a href="soft.html#sof">Bed</a></li>
+                  <li><a href="soft.html#sof">Recliners</a></li>
+                  <li><a href="soft.html#soft1">Ottomans</a></li>
+                  <li><a href="soft.html#soft1">Daybeds</a></li>
+                  <li><a href="soft.html#soft1">Sectional sofas</a></li>
+                  <li><a href="soft.html#soft4">Benches</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown serv-item-wrap">
+                <a href="fences.html">Fences</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="fences.html#fen">Board-on-board</a></li>
+                  <li><a href="fences.html#fen">Side-by-side</a></li>
+                  <li><a href="fences.html#fen">Shadowbox</a></li>
+                  <li><a href="fences.html#fences1">Lattice</a></li>
+                  <li><a href="fences.html#fences1">Louvered</a></li>
+                  <li><a href="fences.html#fences1">Picket</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown serv-item-wrap">
+                <a href="stairs.html">Stairs</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="stairs.html#sta">Straight stairs</a></li>
+                  <li><a href="stairs.html#sta">Curved stairs</a></li>
+                  <li><a href="stairs.html#sta">Spiral stairs</a></li>
+                  <li><a href="stairs.html#stairs1">Winding stairs</a></li>
+                  <li><a href="stairs.html#stairs1">Иalusters</a></li>
+                  <li><a href="stairs.html#stairs1">Stair railings</a></li>
+                  <li><a href="stairs.html#stairs4">Terrace railings</a></li>
+                  <li><a href="stairs.html#stairs4">arden furniture</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown serv-item-wrap">
+                <a href="flooring.html">Flooring</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="flooring.html#flo">Parquet</a></li>
+                  <li><a href="flooring.html#flo">Laminate</a></li>
+                  <li><a href="flooring.html#flo">Terrace</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown serv-item-wrap">
+                <a href="woodworking.html">Woodworking</a><span class="dropdown-toggle2">➜</span>
+                <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
+                <ul class="dropdown-menu2">
+                  <li><a href="woodworking.html#woo">Treatment</a></li>
+                  <li><a href="woodworking.html#woo">Painting</a></li>
+                  <li><a href="woodworking.html#woo">Sanding</a></li>
+                  <li><a href="woodworking.html#woodworking1">Varnishing</a></li>
+                  <li><a href="woodworking.html#woodworking1">Waxing</a></li>
+                  <li><a href="woodworking.html#woodworking1">Polishing</a></li>
+                </ul>
+              </li>
+      
+        </ul>
+        <li class="item">
+          <a class="item-menu" href="#about-material">MATERIALS</a>
+      </li>
+        <li class="item">
+          <a class="item-menu" href="#proj">PROJECTS</a>
+        </li>
+      </nav>
+
+    <div type="text" class="menu-open" data-menu-open>
+      <img class="z" src="img/menu.svg" alt="Mobile menu" width="35" height="35">
+    </div>
+
+  </div> 
+
+
+  <div class="mob-menu is-hidden mob-container" data-menu>
+    <div class="mob-wrapp ">
+      <div type="text" class="menu-close" data-menu-close>
+        <img src="img/clear.svg" alt="Button clear" width="35" height="35" >
+      </div>
+      <nav class="nav-menu">
+        <ul class="mob-list">
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="wood.html">НOME</a>
+          </li> 
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="#about-us">ABOUT US</a>
+          </li> 
+          <li class="mob-list_item dropdown2">
+            <a class="mob-list_link" href="#our-services">SERVICES</a>
+            <button class="dropdown-toggle2">▼</button> <!-- Добавленная кнопка -->
+                      <ul class="dropdown-menu2 dropdown-menu2-mob">
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="windows.html">Windows</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="windows.html#win">Casement windows</a></li>
+                            <li><a href="windows.html#windows1">Flush casement windows</a></li>
+                            <li><a href="windows.html#windows2">Sash windows</a></li>
+                            <li><a href="windows.html#windows3">Tilt and turn windows</a></li>
+                            <li><a href="windows.html#windows4">Bay windows</a></li>
+                            <li><a href="windows.html#windows5">Bow windows</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="doors.html">Doors</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="doors.html#doo">Battened and ledged doors</a></li>
+                            <li><a href="doors.html#doors1">Wooden dutch doors</a></li>
+                            <li><a href="doors.html#doors2">Bifold doors</a></li>
+                            <li><a href="doors.html#doors3">Wooden french doors</a></li>
+                            <li><a href="doors.html#doors4">Panelled doors</a></li>
+                            <li><a href="doors.html#doors5">Hollow core doors</a></li>
+                            <li><a href="doors.html#doors6">Wooden louvered doors</a></li>
+                            <li><a href="doors.html#doors7">Barn doors</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="kitchens.html">Kitchens</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="#kit">Kitchens with an island</a></li>
+                            <li><a href="#kitchens1">Kitchens with built-in appliances</a></li>
+                            <li><a href="#kitchens2">Kitchens with open shelves</a></li>
+                            <li><a href="#kitchens3">Kitchens with pull-out drawers</a></li>
+                            <li><a href="#kitchens4">Dining tables</a></li>
+                            <li><a href="#kitchens5">Dining chairs</a></li>
+                            <li><a href="#kitchens6">Kitchens with a bar counter</a></li>
+                          </ul>
+                        </li>
+
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="furniture.html">Furniture</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="furniture.html#fur">Cabinets</a></li>
+                            <li><a href="furniture.html#furniture1">Chests of drawers</a></li>
+                            <li><a href="furniture.html#furniture2">Cabinets</a></li>
+                            <li><a href="furniture.html#furniture3">Display cabinets</a></li>
+                            <li><a href="furniture.html#furniture4">Bedside tables</a></li>
+                            <li><a href="furniture.html#furniture5">Media consoles</a></li>
+                            <li><a href="furniture.html#furniture6">Wardrobes</a></li>
+                            <li><a href="furniture.html#furniture7">Panels, Moldings, Cornices</a></li>
+                            <li><a href="furniture.html#furniture8">Partitions</a></li>
+                          </ul>
+                        </li>
+
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="furniture.html">Soft furniture</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="soft.html#sof">Sofas</a></li>
+                            <li><a href="soft.html#soft1">Bed</a></li>
+                            <li><a href="soft.html#soft2">Recliners</a></li>
+                            <li><a href="soft.html#soft3">Ottomans</a></li>
+                            <li><a href="soft.html#soft4">Daybeds</a></li>
+                            <li><a href="soft.html#soft5">Sectional sofas</a></li>
+                            <li><a href="soft.html#soft6">Benches</a></li>
+                          </ul>
+                        </li>
+
+
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="fences.html">Fences</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="fences.html#fen">Board-on-board</a></li>
+                            <li><a href="fences.html#fences1">Side-by-side</a></li>
+                            <li><a href="fences.html#fences2">Shadowbox</a></li>
+                            <li><a href="fences.html#fences3">Lattice</a></li>
+                            <li><a href="fences.html#fences4">Louvered</a></li>
+                            <li><a href="fences.html#fences5">Picket</a></li>
+                          </ul>
+                        </li>
+
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="stairs.html">Stairs</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="stairs.html#sta">Straight stairs</a></li>
+                            <li><a href="stairs.html#stairs1">Curved stairs</a></li>
+                            <li><a href="stairs.html#stairs2">Spiral stairs</a></li>
+                            <li><a href="stairs.html#stairs3">Winding stairs</a></li>
+                            <li><a href="stairs.html#stairs4">Иalusters</a></li>
+                            <li><a href="stairs.html#stairs5">Stair railings</a></li>
+                            <li><a href="stairs.html#stairs6">Terrace railings</a></li>
+                            <li><a href="stairs.html#stairs7">arden furniture</a></li>
+                          </ul>
+                        </li>
+
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="flooring.html">Flooring</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="flooring.html#flo">Parquet</a></li>
+                            <li><a href="flooring.html#flooring1">Laminate</a></li>
+                            <li><a href="flooring.html#flooring2">Terrace</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li class="dropdown-menu2-mob-list" >
+                          <a href="woodworking.html">Woodworking</a>
+                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                          <ul class="dropdown-menu2">
+                            <li><a href="woodworking.html#woo">Treatment</a></li>
+                            <li><a href="woodworking.html#woodworking1">Painting</a></li>
+                            <li><a href="woodworking.html#woodworking2">Sanding</a></li>
+                            <li><a href="woodworking.html#woodworking3">Varnishing</a></li>
+                            <li><a href="woodworking.html#woodworking4">Waxing</a></li>
+                            <li><a href="woodworking.html#woodworking5">Polishing</a></li>
+                          </ul>
+                        </li>
+
+
+                      </ul>
+                    </li>  
+          <li class="mob-list_item">
+              <a class="mob-list_link" href="#about-material">MATERIALS</a>
+          </li>
+          <li class="mob-list_item">
+            <a class="mob-list_link" href="#proj">PROJECTS</a>
+          </li> 
+        </ul>
+      </nav>
+    </div>
+
+
+</header>
+
+<body>
+
+  <section class="window-details details">
+    <div class="info-block">
+      <h1 class="windows_title">FENCES</h1>
+      <div class="title-underline" style="width: 98px;" ></div>
+      <p class="info-content">
+        At Master Builders VS LTD, we transform wood into culinary masterpieces. Your kitchen is more than just a place for cooking; it's a hub of warmth and gastronomic inspiration for your home. Our team of designers and carpenters works hand in hand with you to create the perfect space where every nook meets your needs and style. With custom wooden kitchens, we pay attention to the smallest details—from elegant handles to custom shelves and lighting. Kitchens from Master Builders VS LTD are an investment in your comfort and the pleasure of every meal prepared. Choose the exclusivity and quality that only natural wood, crafted by the skilled hands of our finest kitchen carpenters, can offer.
+      </p>
+    </div>
+  </section>
+<section class="window-gallery" id="fen">
+
+  <div class="gallery-images" style="text-align: center;">
+
+    <div class="wrapper_img">
+      <img class="photo" src="fences/1.webp" alt="Window Sample 1">
+      <h2 class="window-title" id="fences1">BOARD-ON-BOURD</h2>
+  <div class="window-description">
+    <p>Crafted for privacy, this fencing style intertwines pickets on alternating sides of the rail, forming a robust barrier. Its seamless design ensures privacy from all angles, though the extra material needed does elevate expenses.
+      Featuring tightly packed pickets without gaps, board-on-board fencing is ideal for those prioritizing seclusion.       
+    </p>
+  </div>
+    </div>
+    <div class="wrapper_img">
+      <img class="photo" src="fences/2.webp" alt="Window Sample 2">
+           <h2 class="window-title" id="fences2">SIDE-BY-SIDE</h2>
+  <div class="window-description">
+    <p> A popular alternative for privacy, side-by-side fencing aligns pickets edge-to-edge, forming a continuous barrier. 
+      Similar to board-on-board fencing, this style can be installed either horizontally or vertically. 
+      </p>
+    </div>
+  </div>
+    <div class="wrapper_img">
+      <img class="photo" src="fences/3.webp" alt="Window Sample 3">
+       <h2 class="window-title" id="fences3">SHADOWBOX</h2>
+  <div class="window-description">
+    <p>Crafted with alternating pickets on each side and a space in between, this fence casts intriguing shadows, imparting a unique visual appeal. While appearing solid when observed straight on, it offers a glimpse through from certain angles.
+      </p>
+    </div>
+  </div>
+
+    <div class="wrapper_img">
+      <img class="photo" src="fences/4.webp" alt="Window Sample 3">
+      <h2 class="window-title" id="fences4">POST AND RAIL</h2>
+  <div class="window-description">
+    <p>
+      Post-and-rail fencing boasts elongated, sleek rectangular timber rails supported by substantial posts, presenting a refined alternative to the rugged appearance of split-rail fences.
+Suitable for farms and expansive estates seeking to demarcate boundaries or enclose livestock, this style requires less material compared to densely packed picket fences, facilitating straightforward installation and maintenance.
+
+      </p>
+    </div>
+  </div>
+
+    <div class="wrapper_img">
+      <img class="photo" src="fences/5.jpg" alt="Window Sample 3">
+      <h2 class="window-title" id="fences5">LATTICE</h2>
+  <div class="window-description">
+    <p>
+      Resembling the intricate lattice of a garden trellis, lattice fencing showcases intersecting wooden strips in a decorative pattern, adding charm to any setting.
+Ideal for both full-scale fencing and embellishing existing structures, lattice fencing proves advantageous in gardens by deterring deer and rabbits while allowing ample light and airflow. 
+      </p>
+    </div>
+  </div>
+  <div class="wrapper_img">
+      <img class="photo" src="fences/6.webp" alt="Window Sample 3">
+      <h2 class="window-title" id="fences6">LOUVERED</h2>
+      <div class="window-description">
+        <p>
+          Embracing a timeless appeal, this classic wood fence design features evenly spaced pickets, striking a balance between visibility and security. Ideal for those seeking a welcoming yet protective boundary for their property.
+          Given their typically shorter stature, picket fences offer a cost-effective fencing solution compared to other styles.
+          </p>
+        </div>
+      </div>
+      <div class="wrapper_img">
+        <img class="photo" src="fences/7.jpg" alt="Window Sample 3">
+        <h2 class="window-title" id="fences7">PICKET</h2>
+        <div class="window-description">
+          <p>
+            : A breakfast bar provides additional space for eating or spending time in the kitchen. This is convenient for quick breakfasts, snacks or evening gatherings with friends or family.Best for open plan kitchens where a breakfast bar can serve as a divider between the kitchen and living room. Also suitable for people who value modern style and comfort in the interior.
+            </p>
+          </div>
+        </div>
+
+    <!-- Add more images as needed -->
+  </div>
+</section>
+<section class="window-details">
+  <div class="info-block">
+    <div class="info-header">ADVANTAGES</div>
+    <div class="title-underline" style="width: 164px;"></div>
+    <p class="info-content">
+      Wooden fences are not only practical structures that demarcate territory, but also important elements of landscape design that can reflect your style and influence the overall look of your yard. They provide warmth and coziness to your home, creating an atmosphere of homely comfort.
+    </p>
+    <p class="info-content">
+      Wooden fences can be executed in various styles and variations, from classical to modern, from simple to complex. They can have different heights, shapes, and designs, according to your taste and requirements. Being made of natural material, wooden fences blend perfectly into any natural landscape, adding charm and sophistication.
+    <p class="info-content">
+      In addition to aesthetic advantages, wooden fences are durable and sturdy constructions that provide a reliable enclosure for your yard. They also complement other elements of landscape design, such as plants, flower beds, and pathways, creating a harmonious and attractive look for your yard.
+    </p>
+  </div>
+</section>
+
+  <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+  <div id="whatsapp-icon" style="display:none;">
+    <a href="https://wa.me/447525459552?text=Online%20assistance%20here">
+      <span>start chat...</span>
+      <img src="whatsapp1.png" alt="WhatsApp Icon">
+    </a>
+    <div id="close-button" onclick="closeWhatsAppIcon()">X</div>
+  </div>
+  
+  
+  
+  
+  <script>
+  
+  
+  
+  </script>
+  
+  </body>
+  <footer class="footer_bg">
+    <div class="footer-block">
+        <div class="a">
+          <div class="wrap_logo" style="display: flex;flex-direction: column;">
+            <a class="footer_logo_link" href="#home">
+              <span class="footer_logo">
+                <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo" oncontextmenu="return false;">
+              </span>
+            </a>
+          </div>
+  
+  
+  
+          
+          <div class="footer-menu">
+            <nav class="footer_navigation-menu">
+              <ul class="footer_list_menu">
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#home">HOME</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#about">ABOUT US</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#serv">SERVICES</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#proj">PROJECTS</a>
+                </li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="b ">
+          
+          <div class="footer-contacts">
+            <h3 class="title_contacts">Contacts</h3>
+            <address>
+            <ul class="footer_list_menu" >
+              <li class= "list-footer-item"><a class="foter-contacts-mail" href="mailto:project@mbvsltd.com">project@mbvsltd.com</a></li>
+              <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:075 2545 9552">075 2545 9552</a></li>
+              <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:020 3539 1924">020 3539 1924</a></li>
+            </ul>
+            </address>
+            <div class="sety_footer">
+        <a href="https://www.yell.com/biz/master-builders-vs-ltd-harrow-8851698/" target="_blank">
+      <img class="yell_footer" src="img/yell-icon.png" alt="Yell" style="width: 35px; height: 35px;background-color: #03031a;border-radius: 8px;" >
+        </a>
+        <a href="https://www.linkedin.com/in/vitalii-sopit-8ba5b5162/" target="_blank">
+      <img class="in_footer" src="img/in-icon.png" alt="LinkedIn" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61551452585348" target="_blank">
+      <img class="in_footer" src="img/facebook.png" alt="Facebook" style="width: 35px; height: 35px; background-color: #03031a;">
+        </a>
+        <a href="https://www.instagram.com/masterbuildersvsltd/?next=%2F" target="_blank">
+      <img class="in_footer" src="img/instagram.webp" alt="Instagram" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        <a href="https://wa.me/447525459552?text=Online%20assistance%20here" target="_blank">
+      <img class="in_footer" src="img/whatsapp1.webp" alt="WhatsApp" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        </div>
+          </div>
+        </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+  
+ 
+
+
+  // Активне меню та скрол до выдповыдного блоку
+  // Ждем события DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', function() {
+  var currentUrl = window.location.href;
+  var menuLinks = document.querySelectorAll('.item-menu');
+  
+  for (var i = 0; i < menuLinks.length; i++) {
+  // Получаем URL ссылки
+  var linkUrl = menuLinks[i].getAttribute('href');
+  
+  // Проверяем, соответствует ли текущий URL ссылке в меню
+  if (currentUrl === linkUrl) {
+    // Если да, то добавляем класс "active" к элементу меню
+    menuLinks[i].classList.add('active');
+  }
+  }
+  });
+  
+
+
+
+
+  (() => {
+  const refs = {
+    openMenuBtn: document.querySelector("[data-menu-open]"),
+    closeMenuBtn: document.querySelector("[data-menu-close]"),
+    menu: document.querySelector("[data-menu]"),
+    body: document.querySelector("body"),
+    menuList: document.querySelector(".mob-list"),
+  };
+
+  refs.openMenuBtn.addEventListener("click", toggleMenu);
+  refs.closeMenuBtn.addEventListener("click", toggleMenu);
+  refs.menuList.addEventListener("click", removeMenu);
+
+  function toggleMenu() {
+    refs.menu.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+  }
+  function removeMenu() {
+    refs.menu.classList.add("is-hidden");
+    refs.body.classList.remove("no-scroll");
+  }
+})();
+  
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+function closeAllDropdowns(exceptMenu = null) {
+  document.querySelectorAll('.dropdown-menu2').forEach(function(menu) {
+    if (menu !== exceptMenu) {
+      menu.style.display = 'none';
+    }
+  });
+}
+
+var desktopToggles = document.querySelectorAll('.dropdown-toggle2');
+desktopToggles.forEach(function(toggle) {
+  var menu = toggle.nextElementSibling;
+  toggle.parentNode.addEventListener('mouseover', function() {
+    menu.style.display = 'block';
+  });
+  toggle.parentNode.addEventListener('mouseout', function() {
+    menu.style.display = 'none';
+  });
+});
+
+var mobileToggles = document.querySelectorAll('.dropdown2 .dropdown-toggle2');
+mobileToggles.forEach(function(toggle) {
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    var dropdownMenu = toggle.nextElementSibling;
+    closeAllDropdowns(dropdownMenu);
+    var isMenuVisible = dropdownMenu.style.display === 'block';
+    dropdownMenu.style.display = isMenuVisible ? 'none' : 'block';
+  });
+});
+
+// Refinement for mobile submenu toggles
+var subDropdownToggles = document.querySelectorAll('.dropdown-menu2-mob-list .dropdown-link');
+subDropdownToggles.forEach(function(subToggle) {
+  subToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    var subMenu = subToggle.nextElementSibling;
+    var parentDropdown = subToggle.closest('.dropdown-menu2');
+    
+    // Close all submenus within this dropdown, except for the one being toggled
+    parentDropdown.querySelectorAll('.dropdown-menu2').forEach(function(otherSubMenu) {
+      if (otherSubMenu !== subMenu) {
+        otherSubMenu.style.display = 'none';
+      }
+    });
+
+    // Toggle the clicked submenu
+    var isSubMenuVisible = subMenu.style.display === 'block';
+    subMenu.style.display = isSubMenuVisible ? 'none' : 'block';
+  });
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.dropdown2')) {
+    closeAllDropdowns();
+  }
+});
+
+document.querySelectorAll('.mob-list_link, .dropdown-menu2 a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var targetId = link.getAttribute('href');
+    if (targetId.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        // Close the mobile menu after smooth scroll
+        const mobMenu = document.querySelector(".mob-menu");
+        mobMenu.classList.add("is-hidden");
+        document.body.classList.remove("no-scroll");
+      }
+    }
+  });
+});
+
+});
+
+
+
+
+// Кнопка скролу догори
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("backToTopBtn").addEventListener("click", function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      let targetId = this.getAttribute('href');
+      let target = document.querySelector(targetId);
+      if (target) {
+        let headerHeight = document.querySelector('.header').offsetHeight;
+        let targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+// ватсап
+window.onload = function() {
+  setTimeout(function() {
+      document.getElementById('whatsapp-icon').style.display = 'block';
+  }, 5000);  // 5000 milliseconds = 5 seconds
+}
+
+function closeWhatsAppIcon() {
+  document.getElementById('whatsapp-icon').style.display = 'none';
+}
+
+
+
+  
+  
+
+  
+
+
+
+
+
+
+// Text content for each type of window
+const windowDescriptions = {
+  'casement': 'Casement windows are considered a classic style...',
+  // ... other descriptions for each data-type
+};
+
+document.querySelectorAll('.wrapper_img').forEach(function(container) {
+  const type = container.getAttribute('data-type');
+  const text = windowDescriptions[type];
+  
+  container.addEventListener('mouseenter', function() {
+    const modalText = document.createElement('p');
+    modalText.className = 'modal-text';
+    modalText.textContent = text;
+    container.querySelector('.card-text-overlay').appendChild(modalText);
+  });
+
+  container.addEventListener('mouseleave', function() {
+    const modalText = container.querySelector('.modal-text');
+    if (modalText) {
+      modalText.remove();
+    }
+  });
+});
+
+
+  </script>
+  
+  </html>
