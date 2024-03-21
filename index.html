@@ -13,11 +13,224 @@
   <meta name="description" content="">
 </head>
 <style>
+ body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
 
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .window-details {
+    gap: 20px;
+    padding: 20px;
+    background-color: #eaeaea;
+    padding: 10px;
+    margin-top: 50px;
+  }
+.details{
+  margin-top: 150px;
+}
+  .window-gallery {
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+
+  .window-gallery h2 {
+    text-align: center;
+  }
+
+  .gallery-images img {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .windows_title{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .title-underline {
+    height: 4px;
+    width: 124px;
+    background-color: #007aff;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.gallery-images{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  .wrapper_img {
+    position: relative;
+    width: 600px;
+    height: 600px;
+  }
+
+  .photo {
+    width: 600px;
+    height: 600px;
+  }
+
+  .card-text-overlay {
+    position: absolute;
+    bottom: 30px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    margin-bottom: 10px; /* Space for the 'More' link */
+  }
+    .info-header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;    
+      margin-top: 40px;
+}
+
+    .info-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .info-list {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .info-list li {
+      margin-bottom: 5px;
+    }
+
+    .mission-statement {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .container {
+    z-index: 10;
+    position: relative;
+  }
+
+  /* This will set the info-block to take 70% width and center it, with a lighter background */
+  .info-block {
+    width: 70%; /* Use 70% of the viewport width */
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background, adjust the color as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds a slight shadow for depth */
+    font-family: Arial, sans-serif;
+  }
+
+  /* Make sure that your header is not covering the sections below */
+  header {
+    z-index: 1000; /* Higher z-index means it will be on top */
+    position: relative; /* Position relative so z-index takes effect */
+  }
+
+
+  .wrapper_img {
+  position: relative;
+  width: 600px;
+  height: 560px; /* Adjust as needed */
+  /* other styling */
+}
+
+.window-title {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white; /* Change as needed */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 5px 0; /* Padding for spacing */
+  margin: 0; /* Reset margin */
+  display: block; /* Ensure it's always a block */
+  transition: all 0.3s ease; /* Transition for the hover effect */
+}
+
+.window-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent overlay */
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+.wrapper_img:hover .window-description {
+  visibility: visible;
+  opacity: 1;
+}
+.info-content{
+  text-align: justify;
+}
+.dropdown:hover .dropdown-menu {
+    text-align: left;
+    color: black;
+}
+
+
+
+  /* Style adjustments for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .info-block {
+      width: 90%; /* On smaller screens, the info-block should take more space */
+    }
+  }
+  @media screen and (max-width: 540px) {
+  .nav-menu{
+    text-align: left;
+  }
+  }
 </style>
+
+
+
 <header class="header">  
   <div class="container main-container">
-  <a class="logo" href="">
+  <a class="logo" href="wood.html">
 <img class="logo_img" src="img/logo/7smol.png" alt="Master Builders VS LTD Logo" >
 </a>
       <nav class="navigation-menu" id="main-nav">
@@ -35,30 +248,28 @@
                 <a href="windows.html">Windows</a><span class="dropdown-toggle2">➜</span>
                 <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
                 <ul class="dropdown-menu2">
-                  <li><a class="external-link" href="windows.html##win">Casement windows</a></li>
-                  <li><a class="external-link" href="windows.html##win">Flush casement windows</a></li>
-                  <li><a class="external-link" href="windows.html##win">Sash windows</a></li>
-                  <li><a class="external-link" href="windows.html#windows1">Tilt and turn windows</a></li>
-                  <li><a class="external-link" href="windows.html#windows2">Bay windows</a></li>
-                  <li><a class="external-link" href="windows.html#windows3">Bow windows</a></li>
+                  <li><a class="external-link" href="#win">Casement windows</a></li>
+                  <li><a class="external-link" href="#win">Flush casement windows</a></li>
+                  <li><a class="external-link" href="#win">Sash windows</a></li>
+                  <li><a class="external-link" href="#windows1">Tilt and turn windows</a></li>
+                  <li><a class="external-link" href="#windows2">Bay windows</a></li>
+                  <li><a class="external-link" href="#windows3">Bow windows</a></li>
                 </ul>
               </li>
-
               <li class="dropdown serv-item-wrap">
                 <a href="doors.html">Doors</a><span class="dropdown-toggle2">➜</span>
                 <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
                 <ul class="dropdown-menu2">
-                  <li><a href="doors.html#doo">Battened and ledged doors</a></li>
-                  <li><a href="doors.html#doo">Wooden dutch doors</a></li>
-                  <li><a href="doors.html#doo">Bifold doors</a></li>
-                  <li><a href="doors.html#doors1">Wooden french doors</a></li>
-                  <li><a href="doors.html#doors1">Panelled doors</a></li>
-                  <li><a href="doors.html#doors1">Hollow core doors</a></li>
-                  <li><a href="doors.html#doors4">Wooden louvered doors</a></li>
-                  <li><a href="doors.html#doors4">Barn doors</a></li>
+                  <li><a href="#">Battened and ledged doors</a></li>
+                  <li><a href="#">Wooden dutch doors</a></li>
+                  <li><a href="#">Bifold doors</a></li>
+                  <li><a href="#">Wooden french doors</a></li>
+                  <li><a href="#">Panelled doors</a></li>
+                  <li><a href="#">Hollow core doors</a></li>
+                  <li><a href="#">Wooden louvered doors</a></li>
+                  <li><a href="#">Barn doors</a></li>
                 </ul>
               </li>
-
               <li class="dropdown serv-item-wrap">
                 <a href="kitchens.html">Kitchens</a><span class="dropdown-toggle2">➜</span>
                 <!-- <button class="dropdown-toggle2">➜</button> Добавленная кнопка -->
@@ -191,125 +402,123 @@
                           <a href="windows.html">Windows</a>
                           <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
                           <ul class="dropdown-menu2">
-                            <li><a href="windows.html#win">Casement windows</a></li>
-                            <li><a href="windows.html#windows1">Flush casement windows</a></li>
-                            <li><a href="windows.html#windows2">Sash windows</a></li>
-                            <li><a href="windows.html#windows3">Tilt and turn windows</a></li>
-                            <li><a href="windows.html#windows4">Bay windows</a></li>
-                            <li><a href="windows.html#windows5">Bow windows</a></li>
+                            <li><a href="#win">Casement windows</a></li>
+                            <li><a href="#windows1">Flush casement windows</a></li>
+                            <li><a href="#windows2">Sash windows</a></li>
+                            <li><a href="#windows3">Tilt and turn windows</a></li>
+                            <li><a href="#windows4">Bay windows</a></li>
+                            <li><a href="#windows5">Bow windows</a></li>
                           </ul>
-                        </li>
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="doors.html">Doors</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="doors.html#doo">Battened and ledged doors</a></li>
-                            <li><a href="doors.html#doors1">Wooden dutch doors</a></li>
-                            <li><a href="doors.html#doors2">Bifold doors</a></li>
-                            <li><a href="doors.html#doors3">Wooden french doors</a></li>
-                            <li><a href="doors.html#doors4">Panelled doors</a></li>
-                            <li><a href="doors.html#doors5">Hollow core doors</a></li>
-                            <li><a href="doors.html#doors6">Wooden louvered doors</a></li>
-                            <li><a href="doors.html#doors7">Barn doors</a></li>
-                          </ul>
-                        </li>
-
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="kitchens.html">Kitchens</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="kitchens.html#kit">Kitchens with an island</a></li>
-                            <li><a href="kitchens.html#kitchens1">Kitchens with built-in appliances</a></li>
-                            <li><a href="kitchens.html#kitchens2">Kitchens with open shelves</a></li>
-                            <li><a href="kitchens.html#kitchens3">Kitchens with pull-out drawers</a></li>
-                            <li><a href="kitchens.html#kitchens4">Dining tables</a></li>
-                            <li><a href="kitchens.html#kitchens5">Dining chairs</a></li>
-                            <li><a href="kitchens.html#kitchens6">Kitchens with a bar counter</a></li>
-                          </ul>
-                        </li>
-
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="furniture.html">Furniture</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="furniture.html#fur">Cabinets</a></li>
-                            <li><a href="furniture.html#furniture1">Chests of drawers</a></li>
-                            <li><a href="furniture.html#furniture2">Cabinets</a></li>
-                            <li><a href="furniture.html#furniture3">Display cabinets</a></li>
-                            <li><a href="furniture.html#furniture4">Bedside tables</a></li>
-                            <li><a href="furniture.html#furniture5">Media consoles</a></li>
-                            <li><a href="furniture.html#furniture6">Wardrobes</a></li>
-                            <li><a href="furniture.html#furniture7">Panels, Moldings, Cornices</a></li>
-                            <li><a href="furniture.html#furniture8">Partitions</a></li>
-                          </ul>
-                        </li>
-
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="furniture.html">Soft furniture</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="soft.html#sof">Sofas</a></li>
-                            <li><a href="soft.html#soft1">Bed</a></li>
-                            <li><a href="soft.html#soft2">Recliners</a></li>
-                            <li><a href="soft.html#soft3">Ottomans</a></li>
-                            <li><a href="soft.html#soft4">Daybeds</a></li>
-                            <li><a href="soft.html#soft5">Sectional sofas</a></li>
-                            <li><a href="soft.html#soft6">Benches</a></li>
-                          </ul>
-                        </li>
-
-
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="fences.html">Fences</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="fences.html#fen">Board-on-board</a></li>
-                            <li><a href="fences.html#fences1">Side-by-side</a></li>
-                            <li><a href="fences.html#fences2">Shadowbox</a></li>
-                            <li><a href="fences.html#fences3">Lattice</a></li>
-                            <li><a href="fences.html#fences4">Louvered</a></li>
-                            <li><a href="fences.html#fences5">Picket</a></li>
-                          </ul>
-                        </li>
-
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="stairs.html">Stairs</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="stairs.html#sta">Straight stairs</a></li>
-                            <li><a href="stairs.html#stairs1">Curved stairs</a></li>
-                            <li><a href="stairs.html#stairs2">Spiral stairs</a></li>
-                            <li><a href="stairs.html#stairs3">Winding stairs</a></li>
-                            <li><a href="stairs.html#stairs4">Иalusters</a></li>
-                            <li><a href="stairs.html#stairs5">Stair railings</a></li>
-                            <li><a href="stairs.html#stairs6">Terrace railings</a></li>
-                            <li><a href="stairs.html#stairs7">arden furniture</a></li>
-                          </ul>
-                        </li>
-
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="flooring.html">Flooring</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="flooring.html#flo">Parquet</a></li>
-                            <li><a href="flooring.html#flooring1">Laminate</a></li>
-                            <li><a href="flooring.html#flooring2">Terrace</a></li>
-                          </ul>
-                        </li>
-                        
-                        <li class="dropdown-menu2-mob-list" >
-                          <a href="woodworking.html">Woodworking</a>
-                          <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
-                          <ul class="dropdown-menu2">
-                            <li><a href="woodworking.html#woo">Treatment</a></li>
-                            <li><a href="woodworking.html#woodworking1">Painting</a></li>
-                            <li><a href="woodworking.html#woodworking2">Sanding</a></li>
-                            <li><a href="woodworking.html#woodworking3">Varnishing</a></li>
-                            <li><a href="woodworking.html#woodworking4">Waxing</a></li>
-                            <li><a href="woodworking.html#woodworking5">Polishing</a></li>
-                          </ul>
-                        </li>
-
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="doors.html">Doors</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="doors.html#doo">Battened and ledged doors</a></li>
+                              <li><a href="doors.html#doors1">Wooden dutch doors</a></li>
+                              <li><a href="doors.html#doors2">Bifold doors</a></li>
+                              <li><a href="doors.html#doors3">Wooden french doors</a></li>
+                              <li><a href="doors.html#doors4">Panelled doors</a></li>
+                              <li><a href="doors.html#doors5">Hollow core doors</a></li>
+                              <li><a href="doors.html#doors6">Wooden louvered doors</a></li>
+                              <li><a href="doors.html#doors7">Barn doors</a></li>
+                            </ul>
+                          </li>
+  
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="kitchens.html">Kitchens</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="kitchens.html#kit">Kitchens with an island</a></li>
+                              <li><a href="kitchens.html#kitchens1">Kitchens with built-in appliances</a></li>
+                              <li><a href="kitchens.html#kitchens2">Kitchens with open shelves</a></li>
+                              <li><a href="kitchens.html#kitchens3">Kitchens with pull-out drawers</a></li>
+                              <li><a href="kitchens.html#kitchens4">Dining tables</a></li>
+                              <li><a href="kitchens.html#kitchens5">Dining chairs</a></li>
+                              <li><a href="kitchens.html#kitchens6">Kitchens with a bar counter</a></li>
+                            </ul>
+                          </li>
+  
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="furniture.html">Furniture</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="furniture.html#fur">Cabinets</a></li>
+                              <li><a href="furniture.html#furniture1">Chests of drawers</a></li>
+                              <li><a href="furniture.html#furniture2">Cabinets</a></li>
+                              <li><a href="furniture.html#furniture3">Display cabinets</a></li>
+                              <li><a href="furniture.html#furniture4">Bedside tables</a></li>
+                              <li><a href="furniture.html#furniture5">Media consoles</a></li>
+                              <li><a href="furniture.html#furniture6">Wardrobes</a></li>
+                              <li><a href="furniture.html#furniture7">Panels, Moldings, Cornices</a></li>
+                              <li><a href="furniture.html#furniture8">Partitions</a></li>
+                            </ul>
+                          </li>
+  
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="furniture.html">Soft furniture</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="soft.html#sof">Sofas</a></li>
+                              <li><a href="soft.html#soft1">Bed</a></li>
+                              <li><a href="soft.html#soft2">Recliners</a></li>
+                              <li><a href="soft.html#soft3">Ottomans</a></li>
+                              <li><a href="soft.html#soft4">Daybeds</a></li>
+                              <li><a href="soft.html#soft5">Sectional sofas</a></li>
+                              <li><a href="soft.html#soft6">Benches</a></li>
+                            </ul>
+                          </li>
+  
+  
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="fences.html">Fences</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="fences.html#fen">Board-on-board</a></li>
+                              <li><a href="fences.html#fences1">Side-by-side</a></li>
+                              <li><a href="fences.html#fences2">Shadowbox</a></li>
+                              <li><a href="fences.html#fences3">Lattice</a></li>
+                              <li><a href="fences.html#fences4">Louvered</a></li>
+                              <li><a href="fences.html#fences5">Picket</a></li>
+                            </ul>
+                          </li>
+  
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="stairs.html">Stairs</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="stairs.html#sta">Straight stairs</a></li>
+                              <li><a href="stairs.html#stairs1">Curved stairs</a></li>
+                              <li><a href="stairs.html#stairs2">Spiral stairs</a></li>
+                              <li><a href="stairs.html#stairs3">Winding stairs</a></li>
+                              <li><a href="stairs.html#stairs4">Иalusters</a></li>
+                              <li><a href="stairs.html#stairs5">Stair railings</a></li>
+                              <li><a href="stairs.html#stairs6">Terrace railings</a></li>
+                              <li><a href="stairs.html#stairs7">arden furniture</a></li>
+                            </ul>
+                          </li>
+  
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="flooring.html">Flooring</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="flooring.html#flo">Parquet</a></li>
+                              <li><a href="flooring.html#flooring1">Laminate</a></li>
+                              <li><a href="flooring.html#flooring2">Terrace</a></li>
+                            </ul>
+                          </li>
+                          
+                          <li class="dropdown-menu2-mob-list" >
+                            <a href="woodworking.html">Woodworking</a>
+                            <button class="dropdown-link">➜</button> <!-- Добавленная кнопка -->
+                            <ul class="dropdown-menu2">
+                              <li><a href="woodworking.html#woo">Treatment</a></li>
+                              <li><a href="woodworking.html#woodworking1">Painting</a></li>
+                              <li><a href="woodworking.html#woodworking2">Sanding</a></li>
+                              <li><a href="woodworking.html#woodworking3">Varnishing</a></li>
+                              <li><a href="woodworking.html#woodworking4">Waxing</a></li>
+                              <li><a href="woodworking.html#woodworking5">Polishing</a></li>
+                            </ul>
+                          </li>
 
                       </ul>
                     </li>  
@@ -326,560 +535,192 @@
 
 </header>
 
-<script src="path_to/flip.min.js"></script>
 <body>
+
+  <section class="window-details details" >
+    <div class="info-block">
+      <h1 class="windows_title" >WINDOWS</h1>
+      <div class="title-underline"></div>
+      <p class="info-content">
+        Our company, Master Builders VS LTD, is equipped with the most advanced precision woodworking machinery, allowing us to craft wooden windows of various styles to meet your specific requirements. As a creative partner, we transform your unique ideas into tangible realities. Whether you're looking for traditional designs or modern innovations, our facility is capable of producing windows that not only fit the architectural style of your home but also reflect your personal taste. It's about more than just the tools; it's about our expertise in shaping wood into windows that enhance the character of your space.
+      </p>
+    </div>
+  </section>
+<section class="window-gallery"id="win" >
+
+  <div class="gallery-images" style="text-align: center;">
+
+    <div class="wrapper_img">
+      <img class="photo" src="windows/1.jpg" alt="Window Sample 1">
+      <h2 class="window-title" id="windows1" >CASEMENT WINDOWS</h2>
+  <div class="window-description">
+    <p>Casement windows are considered a classic style, which is characterized by sliding panels that open outward. This design is famous for its simplicity and elegance and can be made in various sizes and shapes. They are particularly popular in Great Britain.
+      Wooden windows made in the sash style have their unique features. They are made of high-quality wood, which creates a natural and cozy atmosphere that gives the house character and charm. Wooden casement windows can be decorated with various details and stains to match any interior style.
+    </p>
+  </div>
+    </div>
+    <div class="wrapper_img">
+      <img class="photo" src="windows/2.jpg" alt="Window Sample 2">
+           <h2 class="window-title" id="windows2">FLUSH CASEMENT WINDOWS</h2>
+  <div class="window-description">
+    <p>Wooden casement windows are characterized by panels flush with the frame when closed, creating a seamless and smooth appearance.
+      One of the key features of such windows is their unique design. The uniform location of the sashes forms a surface that is perfectly aligned with the frame, which improves the overall aesthetic appearance of the window. Clean lines and modern design make them an ideal choice for a minimalist interior.
+      </p>
+    </div>
+  </div>
+    <div class="wrapper_img">
+      <img class="photo" src="windows/3.jpg" alt="Window Sample 3">
+       <h2 class="window-title" id="windows3">SASH WINDOWS</h2>
+  <div class="window-description">
+    <p>Casement windows are a symbol of classical style that has stood the test of time for centuries and is often found in traditional and old buildings. They are distinguished by vertically sliding panels, usually with several glass units. Adding casement windows can instantly elevate the aesthetic of any property, especially one with wood elements.
+      Wooden casement windows are usually made from high-quality wooden sections, which not only add traditional charm but also ensure strength and durability. They can be customized to suit specific design and style preferences, with various finishes, glazing, and fittings available.      
+      </p>
+    </div>
+  </div>
+
+    <div class="wrapper_img">
+      <img class="photo" src="windows/4.jpg" alt="Window Sample 3">
+      <h2 class="window-title" id="windows4">TILT AND TURN WINDOWS</h2>
+  <div class="window-description">
+    <p>
+      Tilt and turn windows are the epitome of modern style, offering versatility in both functionality and aesthetics. These windows can be tilted inward for ventilation or fully opened for easy cleaning and maintenance. This dual functionality makes them a popular choice for modern homes where comfort and efficiency are key.
+      Wooden tilt-and-turn windows are noted for improved aesthetics, as wood can add an attractive design. Ready-made wooden windows can be made using high-quality materials, which increases their durability and strength. Each section of a wooden window contributes to the overall durability and strength of the unit.      
+      </p>
+    </div>
+  </div>
+
+    <div class="wrapper_img">
+      <img class="photo" src="windows/5.jpg" alt="Window Sample 3">
+      <h2 class="window-title" id="windows5">BAY WINDOWS</h2>
+  <div class="window-description">
+    <p>
+      Bay windows, projecting from the main wall of the house, create a niche or bay window inside the room and are known for their panoramic views that enhance natural light and provide a unique design that enriches the interior and exterior of the house.
+Wooden bay windows offer an even more stylish and durable option. They are known for their strength, durability and natural appeal. Wooden bay windows can also be customized to suit any design and style.
+      </p>
+    </div>
+  </div>
+  <div class="wrapper_img">
+      <img class="photo" src="windows/6.jpg" alt="Window Sample 3">
+      <h2 class="window-title" id="windows6">BOW WINDOWS</h2>
+      <div class="window-description">
+        <p>
+          Wooden arched windows impress with their expressiveness and sophistication in architecture, adding elegance and character to any home. These bay window-like windows project forward from the main wall of the house, creating a curved or rounded shape. However, unlike bay windows, which often have three panes, arched windows usually consist of four or more panes that form a continuous curve, resembling the shape of a bow.
+          </p>
+        </div>
+      </div>
+    <!-- Add more images as needed -->
+  </div>
+</section>
+<section class="window-details">
+  <div class="info-block">
+    <div class="info-header">ADVANTAGES</div>
+    <div class="title-underline" style="width: 164px;"></div>
+    <p class="info-content">
+      Several significant advantages make wooden windows an attractive choice for your home. First, they provide unmatched aesthetics that can enhance the overall beauty and character of your home. The natural warmth and charm of wood add a special charm to both traditional and modern homes.
+    </p>
+    <p class="info-content">
+      With unique grain patterns and rich colors, wooden window frames can add elegance and sophistication to any room, creating a warm and inviting atmosphere.
+    <p class="info-content">
+      In addition to aesthetic appeal, wooden windows have exceptional thermal insulation properties. Wood is a natural insulator, which provides better thermal characteristics compared to other materials for window frames. They help maintain a comfortable indoor temperature, reducing energy costs and carbon footprint.
+    </p>
+    <p class="info-content">
+      Wooden window frames are also durable and strong. Wood is a strong and durable material that can stand the test of time. With proper care and treatment, they can remain resistant to rotting, burning, and insect infestation, providing long-lasting reliability. This can be a wise investment as wooden windows can last for decades.
+    </p>
+    <p class="info-content">
+      Finally, wooden windows offer a wide range of customization options, allowing you to adapt them to your specific design preferences. You can easily choose wood species, finishes, colors, and designs, creating windows that perfectly fit the style and aesthetics of your home. Whether you prefer a traditional or contemporary look, wooden windows can be made to fit your unique taste and design.
+    </p>
+  </div>
+</section>
+
+  <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+  <div id="whatsapp-icon" style="display:none;">
+    <a href="https://wa.me/447525459552?text=Online%20assistance%20here">
+      <span>start chat...</span>
+      <img src="whatsapp1.png" alt="WhatsApp Icon">
+    </a>
+    <div id="close-button" onclick="closeWhatsAppIcon()">X</div>
+  </div>
   
-  <div class="wrap container">
-    <main class="page">
-
-
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="bg7.png" alt="Slide 1" />
-            <div class="text-container">
-              <div class="caption">EcoWood creations by Master Builders VS LTD</div>
-              <p>Preserving nature's rhythms in every piece — your unique world of masterfully crafted wood</p>
-            </div>
+  
+  
+  
+  <script>
+  
+  
+  
+  </script>
+  
+  </body>
+  <footer class="footer_bg">
+    <div class="footer-block">
+        <div class="a">
+          <div class="wrap_logo" style="display: flex;flex-direction: column;">
+            <a class="footer_logo_link" href="#home">
+              <span class="footer_logo">
+                <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo" oncontextmenu="return false;">
+              </span>
+            </a>
           </div>
+  
+  
+  
           
-          <div class="swiper-slide">
-            <img src="bg8.jpg" alt="Slide 2" />
-            <div class="text-container">
-              <div class="caption">EcoWood creations by Master Builders VS LTD</div>
-              <p>Manufacturing of high-class doors and windows</p>
-            </div>
+          <div class="footer-menu">
+            <nav class="footer_navigation-menu">
+              <ul class="footer_list_menu">
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#home">HOME</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#about">ABOUT US</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#serv">SERVICES</a>
+                </li>
+                <li class="footer_item_menu">
+                  <a class="footer_menu_link" href="#proj">PROJECTS</a>
+                </li>
+                </ul>
+            </nav>
           </div>
-         
-          <div class="swiper-slide">
-            <img src="bg12.png" alt="Slide 3" />
-            <div class="text-container">
-              <div class="caption">EcoWood creations by Master Builders VS LTD</div>
-              <p>Ergonomic and stylish wooden furniture</p>
-            </div>
-          </div>
-    
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
-<!-- About Us Section -->
-<!-- About Us Section -->
-<section id="about-us"> <!-- Different background -->
-  <div  class="container2">
-  <div class="image-container">
-    <img src="about2.jpg" alt="Our Craftsmanship">
-  </div>
-
-
-      <!-- Text Column -->
-      <div class="text-content-container">
-        <h2 class="section-title-first">WHO WE ARE</h2>
-          <div class="title-underline"></div>
-
-          <!-- Service List -->
-          <!-- <h3 class="list-title">Our Services</h3> -->
-          <p class="list-text">At Master Builders VS LTD, we are renowned for our extensive experience and unique approach to woodworking and construction services. Our fully equipped workshop houses all the necessary machinery to handle any custom wood order, ensuring that our clients' distinct visions are brought to life with precision and care.</p>
-          <p class="list-text">Master Builders VS LTD executes any architectural and design orders, guaranteeing high quality and an individual approach to each project. Our team of professionals possesses extensive knowledge and experience in the field of construction and woodworking, allowing us to realize the boldest ideas of our clients.</p>
-          <div class="service-list">
-            <!-- Adjust the number of columns as needed -->
-            <ul>
-              <li>Full-cycle production</li>
-              <li>High-quality materials</li>
-              <li>Craftsmanship and experience</li>
-              <!-- Add more list items here -->
+        <div class="b ">
+          
+          <div class="footer-contacts">
+            <h3 class="title_contacts">Contacts</h3>
+            <address>
+            <ul class="footer_list_menu" >
+              <li class= "list-footer-item"><a class="foter-contacts-mail" href="mailto:project@mbvsltd.com">project@mbvsltd.com</a></li>
+              <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:075 2545 9552">075 2545 9552</a></li>
+              <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:020 3539 1924">020 3539 1924</a></li>
             </ul>
-            <ul>
-              <li>Concierge service</li>
-              <li>Full range of construction services</li>
-              <li>Individual approach</li>
-              <!-- Add more list items here -->
-            </ul>
+            </address>
+            <div class="sety_footer">
+        <a href="https://www.yell.com/biz/master-builders-vs-ltd-harrow-8851698/" target="_blank">
+      <img class="yell_footer" src="img/yell-icon.png" alt="Yell" style="width: 35px; height: 35px;background-color: #03031a;border-radius: 8px;" >
+        </a>
+        <a href="https://www.linkedin.com/in/vitalii-sopit-8ba5b5162/" target="_blank">
+      <img class="in_footer" src="img/in-icon.png" alt="LinkedIn" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61551452585348" target="_blank">
+      <img class="in_footer" src="img/facebook.png" alt="Facebook" style="width: 35px; height: 35px; background-color: #03031a;">
+        </a>
+        <a href="https://www.instagram.com/masterbuildersvsltd/?next=%2F" target="_blank">
+      <img class="in_footer" src="img/instagram.webp" alt="Instagram" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        <a href="https://wa.me/447525459552?text=Online%20assistance%20here" target="_blank">
+      <img class="in_footer" src="img/whatsapp1.webp" alt="WhatsApp" style="width: 35px; height: 35px;background-color: #03031a;">
+        </a>
+        </div>
           </div>
-
-          <!-- Existing Text -->
-          <p class="list-text" style="  "><span style=" font-style: italic; text-decoration: underline; font-weight: bold; ">The mission of Master Builders VS LTD</span> is to excel in the woodworking and building industry by delivering products and services of the highest quality. Our dedication to superior craftsmanship is evident in the unrivaled quality of every wooden creation we produce. We uphold strict quality control and use only high-quality materials throughout our comprehensive production cycle.</p>
-          <p class="list-text" style=" ">Employing innovative methods and technologies, we craft products that not only meet but exceed our clients' expectations. Beyond woodworking, we offer an extensive range of building services. Excellence in our craft and customer service isn’t just our promise—it’s our time-honored tradition.</p>
-          <!-- Add more paragraphs here -->
         </div>
-      </div>
-
     </div>
-  </div>
-</div>
-</section>
-
-
-      <!-- Our Services Section -->
-<!-- Our Services Section -->
-<section id="our-services">
-  <h2 class="section-title">OUR SERVICES</h2>
-  <div class="services-grid">
-
-  <!-- Service Card Example -->
-<div class="service-card">
-  <div class="service-card-inner card">
-    <div class="service-card-front">
-      <!-- Image for the front of the card -->
-      <img src="1.jpg" alt="Windows" />
-      <!-- Text for the front of the card -->
-      <div class="card-text-overlay">
-        <div class="card-text" style="font-weight: bold;">WINDOWS</div>
-      </div>
-    </div>
-    <div class="service-card-back">
-      <!-- Image for the back of the card -->
-      <img src="1(2).jpg" alt="Windows" />
-      <!-- Text and arrow for the back of the card -->
-      <div class="card-text-overlay">
-        <div class="card-text"> 
-          <ul ><li>Casement Windows</li>
-          <li>Flush Casement Windows</li>
-          <li>Sash Windows</li>
-          <li>Tilt and Turn Windows</li>
-          <li>Bay Windows</li>
-          <li>Bow Windows</li> </ul>
-          </div>
-        <a href="windows.html" class="more-info">More &rarr;</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Service Card Example -->
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="2.webp" alt="Doors" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">DOORS</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="2.jpg" alt="Doors" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Battened and ledged doors</li>
-            <li>Wooden dutch doors</li>
-            <li>Bifold doors</li>
-            <li>Wooden french doors</li>
-            <li>Panelled doors</li>
-            <li>Hollow core doors</li> 
-            <li>Wooden louvered doors</li>
-            <li>Barn doors</li></ul>
-            </div>
-          <a href="doors.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="3(1).jpg" alt="KITCHENS" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">KITCHENS</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="bgai.webp" alt="KITCHENS" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Kitchens with an island</li>
-            <li>Kitchens with built-in appliances</li>
-            <li>Kitchens with open shelves</li>
-            <li>Kitchens with pull-out drawers</li>
-            <li>Dining tables</li>
-            <li>Dining chairs</li> 
-            <li>Kitchens with a bar counter</li> 
-          </ul>
-            </div>
-          <a href="kitchens.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="11.jpg" alt="FURNITURE" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">FURNITURE</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="4(2).jpg" alt="FURNITURE" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Cabinets</li>
-            <li>Chests of drawers</li>
-            <li>Cabinets</li>
-            <li>Display cabinets</li>
-            <li>Bedside tables</li>
-            <li>Media consoles</li> 
-            <li>Wardrobes</li> 
-            <li>Panels, Moldings, Cornices </li>
-            <li>Partitions</li>
-          </ul>
-            </div>
-          <a href="doors.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="44.jpg" alt="SOFT FURNITURE" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">SOFT FURNITURE</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="4.jpg" alt="SOFT FURNITURE" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Sofas</li>
-            <li>Bed</li>
-            <li>Recliners</li>
-            <li>Ottomans</li>
-            <li>Daybeds</li>
-            <li>Sectional sofas</li> 
-            <li>Benches</li> 
-          </ul>
-            </div>
-          <a href="doors.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+  </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
   
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="8.jpg" alt="FENCES" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">FENCES</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="6(3).jpg" alt="FENCES" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Board-on-board</li>
-            <li>Side-by-side</li>
-            <li>Shadowbox</li>
-            <li>Post and rail</li>
-            <li>Lattice</li>
-            <li>Louvered</li> 
-            <li>Picket</li> 
-          </ul>
-            </div>
-          <a href="fences.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="10.jpg" alt="STAIRS" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">STAIRS</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="10(3).jpg" alt="STAIRS" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Straight stairs</li>
-            <li>Curved stairs</li>
-            <li>Spiral stairs</li>
-            <li>Winding stairs</li>
-            <li>Иalusters</li>
-            <li>Stair railings</li> 
-            <li>Terrace railings</li>
-            <li>Garden furniture</li> 
-          </ul>
-            </div>
-          <a href="doors.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="bg16.png" alt="Flooring" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">FLOORING</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="11(5).jpg" alt="Flooring" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Parquet</li>
-            <li>Laminate</li>
-            <li>Terrace</li>
-          </ul>
-            </div>
-          <a href="doors.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-card-inner card">
-      <div class="service-card-front">
-        <!-- Image for the front of the card -->
-        <img src="12(1).jpg" alt="Woodworking" />
-        <!-- Text for the front of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text" style="font-weight: bold;">WOODWORKING</div>
-        </div>
-      </div>
-      <div class="service-card-back">
-        <!-- Image for the back of the card -->
-        <img src="12(6).webp" alt="Woodworking" />
-        <!-- Text and arrow for the back of the card -->
-        <div class="card-text-overlay">
-          <div class="card-text"> 
-            <ul>
-            <li>Treatment</li>
-            <li>Painting</li>
-            <li>Sanding</li>
-            <li>Varnishing</li>
-            <li>Waxing</li>
-            <li>Polishing</li>
-          </ul>
-            </div>
-          <a href="doors.html" class="more-info">More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!-- Repeat for each service -->
-    <!-- ... -->
-  </div>
-</section>
-
  
-
-<section id="about-material">
-  <div class="container2">
-    <div class="text-content-container2">
-      <!-- Text content goes here -->
-      <h2 class="section-title-first">MATERIALS</h2>
-          <div class="title-underline2"></div>
-
-                <!-- <h3 class="list-title">Our Services</h3> -->
-                <p class="list-text">Making wooden furniture is an art that begins with choosing the right material. Our company strives to offer its customers only the best materials that will ensure the beauty, functionality, and durability of each product. </p>
-                <p class="list-text">Here are some of the materials we use and their benefits:</p>
-                <div class="service-list2">
-                  <!-- Adjust the number of columns as needed -->
-                  <ol>
-                    <li><span class="service-list2-bold" >Natural Wood:</span> We work with various types of natural wood, such as oak, maple, beech, pine, birch, spruce, and cherry. These materials have a unique texture and natural beauty, giving the furniture elegance and sophistication, as well as providing strength and durability.</li>
-                    <li><span class="service-list2-bold">Chipboard (Particle Board):</span> We use various types of chipboard including laminated, regular, and melamine. These materials offer a wide range of shades and textures, and provide strength and resistance to moisture, making them an ideal choice for functional furniture.</li>
-                    <li><span class="service-list2-bold">MDF (Medium Density Fiberboard):</span> Plain, lacquered, and melamine MDF is another popular choice for furniture making. MDF provides a smooth surface for decorative coatings, is easy to process, and has excellent strength characteristics.</li>
-                    <li><span class="service-list2-bold">Plywood:</span> We use both regular and laminated plywood. Plywood is lightweight and durable, ideal for creating furniture designs of varying complexity, as well as for finishing surfaces.</li>
-                    <li><span class="service-list2-bold">Bamboo:</span> For those who value environmental friendliness, we offer bamboo furniture. Bamboo is a sustainable and fast-growing material that is naturally beautiful and highly durable.</li>
-                    <li><span class="service-list2-bold">Rubber (Rubber Wood):</span> We also use rubber to create eco-friendly and comfortable furniture. This material is flexible, resilient, and durable, making it ideal for creating elegant decorative elements and functional furniture pieces.</li>
-                    <li><span class="service-list2-bold">Tricoya:</span> Tricoya is a revolutionary wood composite material known for its resistance to moisture, rot, and mold. It is highly resistant to weather conditions, does not expand or shrink, and is eco-friendly as it is produced from sustainable forest resources. Tricoya is versatile and can be used for furniture, building facades, doors, window frames, and more. Our company, Master Builders VS LTD, is an expert in using Tricoya, guaranteeing the highest quality and superior performance in our projects.</li>
-                    <!-- Add more list items here -->
-                  </ol>
-                  <p class="list-text">Our company guarantees the use of only high-quality materials in the manufacture of wooden furniture. We strive to please our customers by offering a wide selection of materials that ensure superior quality and durability in each product.</p>
-                </div>
-    </div>
-    <div class="image-container2">
-      <img src="material/111.jpg" alt="Our Craftsmanship">
-      <img src="material/22.jpg" alt="Our Craftsmanship">
-      <img src="material/3.jpg" alt="Our Craftsmanship">
-    </div>
-  </div>
-</section>
-
-
-<section id="proj">
-<h2 class="section-title-first" style="text-align: center; margin-top: 50px;">PROJECTS</h2>
-<div class="title-underline2" style="width: 130px; margin-top: 50px; margin: 0 auto;"></div>
-<div class="wrapp-list-text" >
-<p class="list-text" >In Master Builders VS LTD, we believe in the power of visualization, which helps us turn your dreams into reality. Our portfolio is not just a showcase of our past achievements, but also an opening to the world of future possibilities that we can create together. In this section, we present an exclusive collection of 3D plans, meticulously designed to highlight the potential of wood in transforming spaces. At Master Builders VS LTD, we strive to turn these designs into reality, ensuring that each project is executed with precision, quality, and a touch of creativity. Allow us to help you bring your ideas to life with the timeless elegance and versatility of wood.</p>
-</div>
-<div class="swiper-container swiper-container-3d">
-  <div class="swiper-wrapper">
-    <!-- Dynamically load your images here -->
-    <div class="swiper-slide swiper-slide2"><img src="gallery/1.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/1.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/10.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/10.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/11.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/2.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/2.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/3.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/3.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/4.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/5.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/5.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/6.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/6.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/7.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/7.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/8.jpg" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/8.webp" alt="Image 1"></div>
-    <div class="swiper-slide swiper-slide2"><img src="gallery/9.jpg" alt="Image 1"></div>
-
-    <!-- ... Add more slides with your images -->
-  </div>
-  <div class="swiper-pagination swiper-pagination-3d"></div>
-  <!-- Add navigation buttons -->
-  <div class="swiper-button-prev swiper-button-prev2"></div>
-  <div class="swiper-button-next swiper-button-next2"></div>
-</div>
-</section>
-
-
-    
-    </main>
-</div>
-
-<button id="backToTopBtn" title="Go to top">⬆️</button>
-
-<div id="whatsapp-icon" style="display:none;">
-  <a href="https://wa.me/447525459552?text=Online%20assistance%20here">
-    <span>start chat...</span>
-    <img src="whatsapp1.png" alt="WhatsApp Icon">
-  </a>
-  <div id="close-button" onclick="closeWhatsAppIcon()">X</div>
-</div>
-
-
-
-
-<script>
-
-
-
-</script>
-
-</body>
-<footer class="footer_bg">
-  <div class="footer-block">
-      <div class="a">
-        <div class="wrap_logo" style="display: flex;flex-direction: column;">
-          <a class="footer_logo_link" href="#home">
-            <span class="footer_logo">
-              <img src="img/logo/8smol.png" alt="Master Builders VS LTD Logo" oncontextmenu="return false;">
-            </span>
-          </a>
-          <!-- <a class="footer_logo_link" href="https://www.fastwarm.com/" style="padding-top:20px;">
-            <span class="footer_logo" >
-              <img src="fastwarm-logo.png" alt="Fastwarm" oncontextmenu="return false;">
-            </span>
-          </a> -->
-        </div>
-
-
-
-        
-        <div class="footer-menu">
-          <nav class="footer_navigation-menu">
-            <ul class="footer_list_menu">
-              <li class="footer_item_menu">
-                <a class="footer_menu_link" href="#home">HOME</a>
-              </li>
-              <li class="footer_item_menu">
-                <a class="footer_menu_link" href="#about">ABOUT US</a>
-              </li>
-              <li class="footer_item_menu">
-                <a class="footer_menu_link" href="#serv">SERVICES</a>
-              </li>
-              <li class="footer_item_menu">
-                <a class="footer_menu_link" href="#proj">PROJECTS</a>
-              </li>
-              </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="b ">
-        
-        <div class="footer-contacts">
-          <h3 class="title_contacts">Contacts</h3>
-          <address>
-          <ul class="footer_list_menu" >
-            <li class= "list-footer-item"><a class="foter-contacts-mail" href="mailto:project@mbvsltd.com">project@mbvsltd.com</a></li>
-            <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:075 2545 9552">075 2545 9552</a></li>
-            <li class= "list-footer-item"><a class="foter-contacts-tel" href="tel:020 3539 1924">020 3539 1924</a></li>
-          </ul>
-          </address>
-          <div class="sety_footer">
-      <a href="https://www.yell.com/biz/master-builders-vs-ltd-harrow-8851698/" target="_blank">
-    <img class="yell_footer" src="img/yell-icon.png" alt="Yell" style="width: 35px; height: 35px;background-color: #03031a;border-radius: 8px;" >
-      </a>
-      <a href="https://www.linkedin.com/in/vitalii-sopit-8ba5b5162/" target="_blank">
-    <img class="in_footer" src="img/in-icon.png" alt="LinkedIn" style="width: 35px; height: 35px;background-color: #03031a;">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61551452585348" target="_blank">
-    <img class="in_footer" src="img/facebook.png" alt="Facebook" style="width: 35px; height: 35px; background-color: #03031a;">
-      </a>
-      <a href="https://www.instagram.com/masterbuildersvsltd/?next=%2F" target="_blank">
-    <img class="in_footer" src="img/instagram.webp" alt="Instagram" style="width: 35px; height: 35px;background-color: #03031a;">
-      </a>
-      <a href="https://wa.me/447525459552?text=Online%20assistance%20here" target="_blank">
-    <img class="in_footer" src="img/whatsapp1.webp" alt="WhatsApp" style="width: 35px; height: 35px;background-color: #03031a;">
-      </a>
-      </div>
-        </div>
-      </div>
-  </div>
-</footer>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
 
 
   // Активне меню та скрол до выдповыдного блоку
@@ -933,12 +774,7 @@
 
 
 
-
-
-
-
-
-
+  
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -1032,23 +868,6 @@ document.querySelectorAll('.mob-list_link, .dropdown-menu2 a').forEach(function(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Кнопка скролу догори
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -1096,65 +915,42 @@ function closeWhatsAppIcon() {
 
 
 
-var swiper = new Swiper('.mySwiper', {
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true
-  },
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  loop: true,
-});
+  
+  
+
+  
 
 
 
 
 
 
-var swiper2 = new Swiper('.swiper-container-3d', {
-  slidesPerView: 3,
-  centeredSlides: true,
-  loop: true,
-  loopedSlides: 5, // Add as many loopedSlides as you have slides
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 250,
-    modifier: 1,
-    slideShadows: false,
-  },
-  effect: 'coverflow',
-  navigation: {
-    nextEl: '.swiper-button-next2',
-    prevEl: '.swiper-button-prev2',
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      loopedSlides: null, // disable looped slides on smaller screens
-    },
-    480: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 40,
+// Text content for each type of window
+const windowDescriptions = {
+  'casement': 'Casement windows are considered a classic style...',
+  // ... other descriptions for each data-type
+};
+
+document.querySelectorAll('.wrapper_img').forEach(function(container) {
+  const type = container.getAttribute('data-type');
+  const text = windowDescriptions[type];
+  
+  container.addEventListener('mouseenter', function() {
+    const modalText = document.createElement('p');
+    modalText.className = 'modal-text';
+    modalText.textContent = text;
+    container.querySelector('.card-text-overlay').appendChild(modalText);
+  });
+
+  container.addEventListener('mouseleave', function() {
+    const modalText = container.querySelector('.modal-text');
+    if (modalText) {
+      modalText.remove();
     }
-  },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+  });
 });
 
-</script>
 
-</html>
+  </script>
+  
+  </html>
