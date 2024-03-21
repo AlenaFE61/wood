@@ -458,7 +458,12 @@ transition: opacity 0.6s;
   transform: scale(0.8);
 }
 
-
+.wrapp-list-text{
+  width: 60%;
+  text-align: center;
+  margin: 30px auto;
+  text-align: justify;
+}
 
 
 
@@ -497,8 +502,11 @@ display: none;
 #about-material .text-content-container2 {
   text-align: justify;
 }
-
+.wrapp-list-text{
+  width: 92%;
 }
+}
+
 @media screen and (max-width: 820px){
 .caption {
   font-size: 26px;
