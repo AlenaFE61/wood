@@ -156,7 +156,7 @@ body {
 .footer_bg{
   width: 100%;
   background: black;
-  height: 324px;
+  height: 372px;
   padding-top: 60px;
   position: relative;
   padding-right: 50px;
@@ -515,7 +515,7 @@ margin-left: 0px;
     height: 400px;
 }
 .footer_bg {
-    height: 300px;
+    height: 340px;
 }
 .footer-contacts {
   padding-right: 50px;
@@ -558,7 +558,7 @@ margin-left: 0px;
 
 @media screen and (max-width: 669px){
 .footer_bg {
-  height: 500px;
+  height: 618px;
   padding-right: 50px;
   padding-left: 50px;
 }
@@ -666,7 +666,7 @@ margin-left: 0px;
   padding-top: 10px;
 }
 .footer_bg {
-  height: 666px;
+  height: 710px;
   padding-right: 20px;
   padding-left: 20px;
 }

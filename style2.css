@@ -527,8 +527,8 @@ p {
  }
 }
 @media screen and (max-width: 540px){
-.dropdown-menu2-mob {
-    width: 140px;
+  .dropdown-menu2-mob {
+    width: 162px;
 }
 }
 
