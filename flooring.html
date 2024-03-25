@@ -7,225 +7,12 @@
   <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style_serv.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
   <title>Wood Services</title>
   <meta name="description" content="">
 </head>
-<style>
- body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-  }
-
-  .window-details {
-    gap: 20px;
-    padding: 20px;
-    background-color: #eaeaea;
-    padding: 10px;
-    margin-top: 50px;
-  }
-.details{
-  margin-top: 150px;
-}
-  .window-gallery {
-    padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 80px;
-  }
-
-  .window-gallery h2 {
-    text-align: center;
-  }
-
-  .gallery-images img {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-
-  .contact-info {
-    background: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-  }
-
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .windows_title{
-    text-align: center;
-    margin-top: 30px;
-  }
-  .title-underline {
-    height: 4px;
-    width: 124px;
-    background-color: #007aff;
-    margin-bottom: 30px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-.gallery-images{
-  display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-  .wrapper_img {
-    position: relative;
-    width: 600px;
-    height: 600px;
-  }
-
-  .photo {
-    width: 600px;
-    height: 600px;
-  }
-
-  .card-text-overlay {
-    position: absolute;
-    bottom: 30px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    color: white;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .card-text {
-    font-size: 16px;
-    margin-bottom: 10px; /* Space for the 'More' link */
-  }
-    .info-header {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      text-align: center;    
-      margin-top: 40px;
-}
-
-    .info-content {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #666;
-    }
-
-    .info-list {
-      margin: 20px 0;
-      padding-left: 20px;
-    }
-
-    .info-list li {
-      margin-bottom: 5px;
-    }
-
-    .mission-statement {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #333;
-    }
-    .container {
-    z-index: 10;
-    position: relative;
-  }
-
-  /* This will set the info-block to take 70% width and center it, with a lighter background */
-  .info-block {
-    width: 70%; /* Use 70% of the viewport width */
-    margin: 10px auto;
-    padding: 20px;
-    background-color: #f9f9f9; /* Light gray background, adjust the color as needed */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds a slight shadow for depth */
-    font-family: Arial, sans-serif;
-  }
-
-  /* Make sure that your header is not covering the sections below */
-  header {
-    z-index: 1000; /* Higher z-index means it will be on top */
-    position: relative; /* Position relative so z-index takes effect */
-  }
-
-
-  .wrapper_img {
-  position: relative;
-  width: 600px;
-  height: 560px; /* Adjust as needed */
-  /* other styling */
-}
-
-.window-title {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: white; /* Change as needed */
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-  padding: 5px 0; /* Padding for spacing */
-  margin: 0; /* Reset margin */
-  display: block; /* Ensure it's always a block */
-  transition: all 0.3s ease; /* Transition for the hover effect */
-}
-
-.window-description {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent overlay */
-  color: white;
-  visibility: hidden;
-  opacity: 0;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: visibility 0s, opacity 0.3s linear;
-}
-
-.wrapper_img:hover .window-description {
-  visibility: visible;
-  opacity: 1;
-}
-.info-content{
-  text-align: justify;
-}
-.dropdown:hover .dropdown-menu {
-    text-align: left;
-    color: black;
-}
-
-
-
-  /* Style adjustments for mobile responsiveness */
-  @media screen and (max-width: 768px) {
-    .info-block {
-      width: 90%; /* On smaller screens, the info-block should take more space */
-    }
-  }
-  @media screen and (max-width: 540px) {
-  .nav-menu{
-    text-align: left;
-  }
-  }
-</style>
-
 
 
 <header class="header">  
@@ -553,7 +340,7 @@
   <div class="gallery-images" style="text-align: center;">
 
     <div class="wrapper_img">
-      <img class="photo" src="flooring/1.jpg" alt="Window Sample 1">
+      <img class="photo" src="flooring/1.webp" alt="Window Sample 1">
       <h2 class="window-title" id="flooring1">PARQUET</h2>
   <div class="window-description">
     <p>Our parquet products are created with a love for detail and attention to quality. We use only the best wood species and advanced technology to ensure that each board is perfect in both appearance and functionality. Let us transform your home into a cozy space with our luxury hardwood flooring.
@@ -561,7 +348,7 @@
   </div>
     </div>
     <div class="wrapper_img">
-      <img class="photo" src="flooring/2.jpg" alt="Window Sample 2">
+      <img class="photo" src="flooring/2.webp" alt="Window Sample 2">
            <h2 class="window-title" id="flooring2">LAMINATE</h2>
   <div class="window-description">
     <p> Laminate flooring is incredibly durable, easy to maintain, and resistant to wear and tear, making it an ideal choice for any space. Our laminate flooring is available in a wide range of designs, from classic to contemporary, to highlight your style and create a cozy atmosphere in your home. Trust our experience and quality and your home will be transformed with our superior laminate flooring.
@@ -569,7 +356,7 @@
     </div>
   </div>
     <div class="wrapper_img">
-      <img class="photo" src="flooring/3.jpg" alt="Window Sample 3">
+      <img class="photo" src="flooring/3.webp" alt="Window Sample 3">
        <h2 class="window-title" id="flooring3">TERRACE</h2>
   <div class="window-description">
     <p>Our company offers a wide selection of materials and designs to create the terrace of your dreams. We use only natural, durable woods to ensure the durability and beauty of your deck for many years to come. Trust our professionalism and become the proud owner of a beautiful terrace that will become the center of attention in your garden or on your home plot.
